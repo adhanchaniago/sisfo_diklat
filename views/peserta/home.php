@@ -3,7 +3,7 @@
     $nik = $_SESSION["username"];
     $sql = "
         SELECT tb_angkatan.id, tb_angkatan.nama_diklat, tb_angkatan.tgl_masuk, tb_angkatan.tgl_selesai, 
-        tb_detail_peserta.id, tb_detail_peserta.nomor_absen, 
+        tb_detail_peserta.id, tb_detail_peserta.nomor_absen, tb_detail_peserta.foto, tb_detail_peserta.ktp,
         tb_detail_peserta.nik, tb_detail_peserta.nama, tb_detail_peserta.jekel, tb_detail_peserta.tempat_lahir, 
         tb_detail_peserta.tgl_lahir, tb_detail_peserta.cabang_asal, tb_detail_peserta.alamat_kantor,
         tb_detail_peserta.tlp_kantor, tb_detail_peserta.nomor_hp, tb_detail_peserta.alamat_rumah, tb_detail_peserta.agama, 
@@ -139,19 +139,19 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div>
-                                    <img src="../../assets/img/huda.jpg" alt="" class="img-responsive">
+                                    <img src="../../assets/img/photo-profil/<?php echo $data["foto"] ?>" alt="" class="img-responsive">
                                 </div><br>
-                                <form action="" method="POST">
+                                <form action="biodata/pros_upload_photo.php" method="POST" enctype="multipart/form-data">
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                             <span class="btn btn-success">
-                                                Browse&hellip; <input type="file" style="display: none;" multiple>
+                                                Browse&hellip; <input type="file" name="photo" style="display: none;">
                                             </span>
                                         </label>
                                         <input type="text" class="form-control" readonly>
                                     </div><br>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-success btn-block" value="Upload">
+                                        <input type="submit" class="btn btn-success btn-block" value="Upload" name="submit">
                                     </div>
                                 </form>
                             </div>
@@ -170,19 +170,19 @@
                         <div class="row">
                             <div class="col-md-12">
                             <div>
-                                <img src="" alt="" class="img-responsive">
+                                <img src="../../assets/img/photo-ktp/<?php echo $data["ktp"] ?>" alt="" class="img-responsive">
                                 </div><br>
-                                <form action="" method="POST">
+                                <form action="biodata/pros_upload_ktp.php" method="POST" enctype="multipart/form-data">
                                     <div class="input-group">
                                         <label class="input-group-btn">
                                             <span class="btn btn-success">
-                                                Browse&hellip; <input type="file" style="display: none;" multiple>
+                                                Browse&hellip; <input type="file" name="ktp" style="display: none;">
                                             </span>
                                         </label>
                                         <input type="text" class="form-control" readonly>
                                     </div><br>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-success btn-block" value="Upload">
+                                        <input type="submit" class="btn btn-success btn-block" value="Upload" name="submit">
                                     </div>
                                 </form>
                             </div>

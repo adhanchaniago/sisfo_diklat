@@ -108,6 +108,20 @@
                         include "input_peserta/input-peserta.php";
                     } elseif ($page == 'lihat-peserta') {
                         include "input_peserta/lihat-biodata-peserta.php";
+                    } elseif ($page == 'ubah-password') {
+                        include "password/ubah_password.php";
+                    } elseif ($page == 'input-mapel') {
+                        include "mata_pelajaran/input-mapel.php";
+                    } elseif ($page == 'lihat-mapel') {
+                        include "mata_pelajaran/lihat-mapel.php";
+                    } elseif ($page == 'input-jadwal') {
+                        include "jadwal_diklat/input-jadwal.php";
+                    } elseif ($page == 'lihat-jadwal') {
+                        include "jadwal_diklat/lihat-jadwal.php";
+                    } elseif ($page == 'input-angkatan') {
+                        include "angkatan_diklat/input-angkatan.php";
+                    } elseif ($page == 'lihat-angkatan') {
+                        include "angkatan_diklat/lihat-angkatan.php";
                     }
 
                 }

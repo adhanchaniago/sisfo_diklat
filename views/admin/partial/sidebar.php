@@ -3,15 +3,23 @@
         <ul class="nav" id="side-menu">
             <li>
                 <div class="user-section">
-                    <div class="user-section-inner">
-                    <img src="../../assets/vendor/siminta/img/user.jpg" alt="">
-                </div>
-                <div class="user-info text-center">
-                    <div><?php echo $_SESSION["username"] ?></div>
-                    <div class="user-text-online">
-                       [ <?php echo $_SESSION["hak_akses"] ?> ]
+                    <!-- <div class="user-section-inner">
+                        <img src="../../assets/vendor/siminta/img/user.jpg" alt="">
+                    </div> -->
+                    <div class="user-info">
+                        <div>
+                            <strong>NIK : </strong> <br> &nbsp;
+                            <?php echo $_SESSION["username"] ?>
+                        </div>
+                        <div>
+                            <strong>NAMA : </strong> <br> &nbsp;
+                            <?php echo strtoupper($_SESSION["nama"]) ?>
+                        </div>
+                        <div>
+                            <strong>STATUS : </strong> <br> &nbsp;
+                            <?php echo strtoupper($_SESSION["hak_akses"]) ?>
+                        </div>
                     </div>
-                </div>
                 </div>
             </li>
             <li class="">
@@ -63,17 +71,39 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-code-fork fa-fw"></i>&nbsp;Angkatan Diklat<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="?page=input-angkatan">Input Angkatan Diklat</a>
+                        <a href="?page=lihat-angkatan">Lihat Angkatan Diklat</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-clipboard fa-fw"></i>&nbsp;Mata Pelajaran<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="?page=input-mapel">Input Mata Pelajaran </a>
+                        <a href="?page=lihat-mapel">Lihat Mata Pelajaran</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Jadwal Diklat<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="?page=input-jadwal">Input Jadwal Diklat </a>
+                        <a href="?page=lihat-jadwal">Lihat Jadwal Diklat</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Rekap Nilai<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="#">Lihat Nilai Peserta</a>
                     </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-info-circle fa-fw"></i>&nbsp;Informasi</a></li>
-            <li>
-                <a href="../../logout.php"><i class=" fa-sign-out fa fw">&nbsp;Logout</i></a>
             </li>
         </ul>
     </div>

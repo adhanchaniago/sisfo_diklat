@@ -90,7 +90,9 @@
                         include "home.php";
                     } elseif ($page == 'edit-profil') {
                         include "biodata/edit_biodata.php";
-                    } 
+                    } elseif ($page == 'ubah-password') {
+                        include "biodata/ubah_password.php";
+                    }
 
                 }
 
