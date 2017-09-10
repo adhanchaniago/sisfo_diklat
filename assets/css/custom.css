@@ -1,0 +1,13 @@
+.user-section {
+    background: #DFF0D8;
+}
+
+.user-info {
+    font-size: 13px;
+}
+
+.user-info > div > strong {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #3c763d;
+}

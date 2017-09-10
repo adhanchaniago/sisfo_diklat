@@ -29,11 +29,11 @@
                             </div>
                             <div class="form-grup">
                                 <label for="nik">Nik</label>
-                                <input type="nik" class="form-control" id="nik" name="nik" placeholder="Nik">
+                                <input type="text" class="form-control" id="nik" name="nik" placeholder="Nik">
                             </div><br>
                             <div class="form-grup">
                                 <label for="nama">Nama</label>
-                                <input type="nama" class="form-control" id="nama" name="nama" placeholder="Nama">
+                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
                             </div><br>
                             <div class="form-group">
                                 <label for="kamar_id">Kamar</label>

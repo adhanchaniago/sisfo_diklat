@@ -15,10 +15,28 @@ if (mysqli_num_rows($hasil) > 0)
 	
 	if ($data["status"]==1)
 	{
+		$user_akun_id = $data["id"];
 		$hakakses = $data["hak_akses"];
 		$username = $data["username"];
 
+		if ($hakakses == 'admin') {
+			$table = 'tb_detail_admin';
+		} elseif ($hakakses == 'staff') {
+			$table = 'tb_detail_staff';
+		} elseif ($hakakses == 'asmen') {
+			$table = 'tb_detail_asmen';
+		} elseif ($hakakses == 'instruktur') {
+			$table = 'tb_detail_instruktur';
+		} elseif ($hakakses == 'peserta') {
+			$table = 'tb_detail_peserta';
+		}
+
+		$sql = "SELECT (nama) FROM $table WHERE user_akun_id = '$user_akun_id'";
+		$proses = mysqli_query($conn, $sql);
+		$detail = mysqli_fetch_assoc($proses);		
+
 		$_SESSION["username"] = $username;
+		$_SESSION["nama"] = $detail["nama"];
 		$_SESSION["hak_akses"] = $hakakses;
 		
 		if ($hakakses=="admin")
@@ -35,6 +53,7 @@ if (mysqli_num_rows($hasil) > 0)
 			header("Location:views/instruktur/home.php");
 		}
 		elseif ($hakakses=="peserta") {
+			
 			header("Location:views/peserta/main.php?page=home");
 		}
 

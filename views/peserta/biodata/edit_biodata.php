@@ -1,143 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <link href="../../../assets/css/bootstrap-admin.css" rel="stylesheet" />
-    <link href="../../../assets/css/font-awesome-admin.css" rel="stylesheet" />
-    <link href="../../../assets/css/pace-theme-big-counter.css" rel="stylesheet" />
-    <link href="../../../assets/css/style-admin.css" rel="stylesheet" />
-    <link href="../../../assets/css/main-style-admin.css" rel="stylesheet" />
-     <link href="css/bootstrap-min-tgl.css" rel="stylesheet"> 
-    <link href="css/datepicker-tgl.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-tgl-min.js"></script> 
-
-</head>
-
-<body>
-    <!--  wrapper -->
-    <div id="wrapper">
-        <!-- navbar top -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
-            <!-- navbar-header -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                   
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/img/logo.png" alt="" />
-                </a>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4>Form Edit Profil Peserta</h4>
             </div>
-            <!-- end navbar-header -->
-            <!-- navbar-top-links -->
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- main dropdown -->
-                <li class="dropdown">
-                   </ul>
-                   
-        </nav>
-       
-        <?php include "../partial/header.php" ?>
-        
-        <div id="page-wrapper">
-
-            <div class="row">
-            
-                <!-- Page Header -->
-                <div class="col-lg-12">
-                    <h3><br><br>Biodata Peserta</h3><br>                 
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form method="POST" action="biodata/pros_edit_biodata.php"> 
+                            <?php
+                                $nik = $_SESSION["username"];
+                                $sql = "
+                                    SELECT tb_angkatan.id, tb_angkatan.nama_diklat, tb_detail_peserta.id, tb_detail_peserta.nomor_absen, 
+                                    tb_detail_peserta.nik, tb_detail_peserta.nama, tb_detail_peserta.jekel, tb_detail_peserta.tempat_lahir, 
+                                    tb_detail_peserta.tgl_lahir, tb_detail_peserta.cabang_asal, tb_detail_peserta.alamat_kantor,
+                                    tb_detail_peserta.tlp_kantor, tb_detail_peserta.nomor_hp, tb_detail_peserta.alamat_rumah, tb_detail_peserta.agama, 
+                                    tb_detail_peserta.foto, tb_kamar.id, tb_kamar.nomor_kamar, tb_kamar.nama_asrama
+                                    FROM tb_detail_peserta
+                                    JOIN tb_angkatan ON tb_detail_peserta.angkatan_id = tb_angkatan.id
+                                    JOIN tb_kamar ON tb_detail_peserta.kamar_id = tb_kamar.id
+                                    WHERE tb_detail_peserta.nik = '$nik'
+                                ";
+                                $proses = mysqli_query($conn, $sql);
+                                $data = mysqli_fetch_assoc($proses);
+                            ?>
+                            <div class="form-grup">
+                                <label for="pesertadiklat">Nama Diklat</label>
+                                <input type="text" class="form-control" id="pesertadiklat" placeholder="Peserta Diklat" value="<?php echo $data["nama_diklat"] ?>" readonly>
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="noabsen">Nomor Absen</label>
+                                <input type="text" class="form-control" id="noabsen" placeholder="No Absen" value="<?php echo $data["nomor_absen"] ?>" readonly>
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="nik">NIK</label>
+                                <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" value="<?php echo $data["nik"] ?>" readonly>
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nik" name="nama" placeholder="Nama Lengkap" value="<?php echo $data["nama"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="jeniskelamin">Jenis Kelamin</label>
+                                <select name="jekel" id="jekel" class="form-control">
+                                    <option value="<?php echo $data["jekel"] ?>"><?php echo strtoupper($data["jekel"]) ?></option>
+                                    <option value="laki-laki">LAKI-LAKI</option>
+                                    <option value="perempuan">PEREMPUAN</option>
+                                </select>
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="tempatlahir">Tempat Lahir</label>
+                                <input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Tempat Lahir" value="<?php echo $data["tempat_lahir"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="tgllahir">Tanggal Lahir</label>
+                                <input type="text" class="form-control datepicker" id="tgllahir" name="tgllahir" placeholder="Tanggal Lahir" data-date-format="yyyy-mm-dd" value="<?php echo $data["tgl_lahir"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="agama">Agama</label>
+                                <select name="agama" id="agama" class="form-control">
+                                    <option value="<?php echo $data["agama"] ?>"><?php echo strtoupper($data["agama"]) ?></option>
+                                    <option value="islam">ISLAM</option>
+                                    <option value="katolik">KATOLIK</option>
+                                    <option value="protestan">PROTESTAN</option>
+                                    <option value="hindu">HINDU</option>
+                                    <option value="buddha">BUDDHA</option>
+                                </select>
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="alamatrumah">Alamat Rumah</label>
+                                <input type="text" class="form-control" id="alamatrumah" name="alamatrumah" placeholder="Alamat Rumah" value="<?php echo $data["alamat_rumah"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="notelpkantor">Nomor Telepon</label>
+                                <input type="text" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="Nomor Telepon" value="<?php echo $data["nomor_hp"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="cabangasal">Kantor Cabang Asal</label>
+                                <input type="text" class="form-control" id="cabangasal" name="cabangasal" placeholder="Cabang Asal" value="<?php echo $data["cabang_asal"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="alamatkantor">Alamat Kantor Cabang </label>
+                                <input type="text" class="form-control" id="alamatkantor" name="alamatkantor" placeholder="Alamat Kantor" value="<?php echo $data["alamat_kantor"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="notelpkantor">Nomor Telepon Kantor Cabang</label>
+                                <input type="text" class="form-control" id="notelpkantor" name="notelpkantor" placeholder="No Telepon Kantor" value="<?php echo $data["tlp_kantor"] ?>">
+                            </div><br>
+                            <button type="submit" class="btn btn-success">Simpan</button>
+                        </form>
+                    </div>
                 </div>
-            </div>    
-
-            <div class="row">
-                <div class="col-lg-5">
-                    <form>
-                        <div class="form-grup">
-                           <label for="pesertadiklat">Peserta Diklat</label>
-                           <input type="pesertadiklat" class="form-control" id="pesertadiklat" placeholder="Peserta Diklat">
-                        </div>
-                        <div class="form-grup">
-                           <label for="angkatan">Angkatan</label>
-                           <input type="angkatan" class="form-control" id="angkatan" placeholder="Angkatan">
-                        </div>
-                        <div class="form-grup">
-                           <label for="noabsen">No Absen</label>
-                           <input type="noabsen" class="form-control" id="noabsen" placeholder="No Absen">
-                        </div>
-                        <div class="form-grup">
-                           <label for="nik">Nik</label>
-                           <input type="nik" class="form-control" id="nik" placeholder="nik">
-                        </div>
-                        <div class="form-grup">
-                           <label for="nama">Nama</label>
-                           <input type="nama" class="form-control" id="nik" placeholder="nama">
-                        </div>
-                        <div class="form-grup">
-                           <label for="jeniskelamin">Jenis Kelamin</label>
-                              <select name="speed" id="speed" class="form-control">
-                                      <option> </option>
-                                      <option>Laki-laki</option>
-                                      <option>Perempuan</option>
-                                      
-                              </select>
-                        </div>
-                        
-                         <div class="form-grup">
-                           <label for="tempatlahir">Tempat Lahir</label>
-                           <input type="tempatllahir" class="form-control" id="tempatlahir" placeholder="Tempat Lahir">
-                        </div>
-                        <div class="form-group" >
-                          <div class="col-md-6">
-                              <div class="input-group date " data-date="" data-date-format="yyyy-mm-dd">
-                                  <input class="form-control" type="text" name="tgl_regis" readonly="readonly">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                              </div>
-                          </div>
-                      </div>
-                        <div class="form-grup">
-                           <label for="cabangasal">Cabang Asal</label>
-                           <input type="cabangasal" class="form-control" id="cabangasal" placeholder="Cabang Asal">
-                        </div>
-                         <div class="form-grup">
-                            <label for="alamatkantor">Alamat Kantor </label>
-                            <input type="alamatkantor" class="form-control" id="alamatkantor" placeholder="Alamat Kantor">
-                        </div>
-                        <div class="form-grup">
-                           <label for="alamatrumah">Alamat Rumah</label>
-                           <input type="alamatrumah" class="form-control" id="alamatrumah" placeholder="Alamat Rumah">
-                        </div>
-                        <div class="form-grup">
-                           <label for="agama">Agama</label>
-                           <input type="agama" class="form-control" id="agama" placeholder="Agama">
-                        </div>
-                        <div class="form-grup">
-                           <label for="angkatan">Angkatan</label>
-                           <input type="angkatan" class="form-control" id="angkatan" placeholder="Angkatan">
-                        </div>
-                         <div class="form-grup">
-                            <label for="notelpkantor">No Telepon Kantor</label>
-                            <input type="notelpkantor" class="form-control" id="notelpkantor" placeholder="No Telepon Kantor">
-                        </div><br>
-                        <button type="submit" class="btn btn-default">Simpan</button>
-                    </form>
-                </div>
-            </div>       
+            </div>
         </div>
-     </div>
-    
-    <script src="../../../assets/js/jquery-admin.js"></script>
-    <script src="../../../assets/js/bootstrap-admin.js"></script>
-    <script src="../../../assets/js/jquery-adminMenu.js"></script>
-    <script src="../../../assets/js/pace-admin.js"></script>
-    <script src="../../../assets/js/siminta-admin.js"></script>
-    <script src="js/bootstrap-min-tgl.js"></script>
-    <script src="js/bootstrap-datepicker-tgl.js"></script>
-    <script>
-    $(".input-group.date").datepicker({autoclose: true, todayHighlight: true});
-    </script>
-
-</body>
-
-</html>
+    </div>
+</div>

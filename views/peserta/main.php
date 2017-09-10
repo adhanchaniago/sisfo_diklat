@@ -88,27 +88,9 @@
                     
                     if ($page == 'home') {
                         include "home.php";
-                    } elseif ($page == 'input-admin') {
-                        include "input_admin/input-admin.php";
-                    } elseif ($page == 'lihat-admin') {
-                        include "input_admin/lihat-biodata-admin.php";
-                    } elseif ($page == 'input-asmen') {
-                        include "input_asmen/input-asmen.php";
-                    } elseif ($page == 'lihat-asmen') {
-                        include "input_asmen/lihat-biodata-asmen.php";
-                    } elseif ($page == 'input-staff') {
-                        include "input_staff/input-staff.php";
-                    } elseif ($page == 'lihat-staff') {
-                        include "input_staff/lihat-biodata-staff.php";
-                    } elseif ($page == 'input-instruktur') {
-                        include "input_instruktur/input-instruktur.php";
-                    } elseif ($page == 'lihat-instruktur') {
-                        include "input_instruktur/lihat-biodata-instruktur.php";
-                    } elseif ($page == 'input-peserta') {
-                        include "input_peserta/input-peserta.php";
-                    } elseif ($page == 'lihat-peserta') {
-                        include "input_peserta/lihat-biodata-peserta.php";
-                    }
+                    } elseif ($page == 'edit-profil') {
+                        include "biodata/edit_biodata.php";
+                    } 
 
                 }
 

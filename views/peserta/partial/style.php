@@ -5,3 +5,4 @@
 <link href="../../assets/vendor/siminta/css/main-style.css" rel="stylesheet" />
 <link href="../../assets/vendor/dataTables/datatables.min.css" rel="stylesheet" />
 <link href="../../assets/css/datepicker-tgl.css" rel="stylesheet" />
+<link href="../../assets/css/custom.css" rel="stylesheet" />

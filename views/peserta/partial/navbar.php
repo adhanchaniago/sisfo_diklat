@@ -16,7 +16,7 @@
                 <i class="fa fa-gear fa-3x"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i>Edit Profil</a>
+                <li><a href="?page=edit-profil"><i class="fa fa-user fa-fw"></i>Edit Profil</a>
                 </li>
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i>Ubah Password</a>
                 </li>
