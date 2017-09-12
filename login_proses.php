@@ -31,10 +31,11 @@ if (mysqli_num_rows($hasil) > 0)
 			$table = 'tb_detail_peserta';
 		}
 
-		$sql = "SELECT (nama) FROM $table WHERE user_akun_id = '$user_akun_id'";
+		$sql = "SELECT id, nama FROM $table WHERE user_akun_id = '$user_akun_id'";
 		$proses = mysqli_query($conn, $sql);
 		$detail = mysqli_fetch_assoc($proses);		
 
+		$_SESSION["id"] = $detail["id"];
 		$_SESSION["username"] = $username;
 		$_SESSION["nama"] = $detail["nama"];
 		$_SESSION["hak_akses"] = $hakakses;
@@ -44,13 +45,13 @@ if (mysqli_num_rows($hasil) > 0)
 			header("Location:views/admin/main.php?page=home");
 		}
 		elseif ($hakakses=="asmen") {
-			header("Location:views/asmen/home.php");
+			header("Location:views/asmen/main.php?page=home");
 		}
 		elseif ($hakakses=="staff") {
-			header("Location:views/staff/home.php");
+			header("Location:views/staff/main.php?page=home");
 		}
 		elseif ($hakakses=="instruktur") {
-			header("Location:views/instruktur/home.php");
+			header("Location:views/instruktur/main.php?page=home");
 		}
 		elseif ($hakakses=="peserta") {
 			

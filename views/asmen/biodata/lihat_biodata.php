@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-    <link href="../assets/css/bootstrap-admin.css" rel="stylesheet" />
-    <link href="../assets/css/font-awesome-admin.css" rel="stylesheet" />
-    <link href="../assets/css/pace-theme-big-counter.css" rel="stylesheet" />
-    <link href="../assets/css/style-admin.css" rel="stylesheet" />
-      <link href="../assets/css/main-style-admin.css" rel="stylesheet" />
+    <link href="../../../assets/css/bootstrap-admin.css" rel="stylesheet" />
+    <link href="../../../assets/css/font-awesome-admin.css" rel="stylesheet" />
+    <link href="../../../assets/css/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="../../../assets/css/style-admin.css" rel="stylesheet" />
+      <link href="../../../assets/css/main-style-admin.css" rel="stylesheet" />
 
 </head>
 

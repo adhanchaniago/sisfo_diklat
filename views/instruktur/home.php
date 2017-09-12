@@ -1,61 +1,88 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <link href="../../assets/css/bootstrap-admin.css" rel="stylesheet" />
-    <link href="../../assets/css/font-awesome-admin.css" rel="stylesheet" />
-    <link href="../../assets/css/pace-theme-big-counter.css" rel="stylesheet" />
-    <link href="../../assets/css/style-admin.css" rel="stylesheet" />
-      <link href="../../assets/css/main-style-admin.css" rel="stylesheet" />
-
-</head>
-
-<body>
-    <!--  wrapper -->
-    <div id="wrapper">
-        <!-- navbar top -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
-            <!-- navbar-header -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                   
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/img/logo.png" alt="" />
-                </a>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h5><strong>Selamat Datang</strong></h5>
             </div>
-            <!-- end navbar-header -->
-            <!-- navbar-top-links -->
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- main dropdown -->
-                <li class="dropdown">
-                
-                   
-        </nav>
-       
-        <?php include "partial/header.php" ?>
-        
-        <div id="page-wrapper">
-
-            <div class="row">
-                <!-- Page Header -->
-                <div class="col-lg-12">
-                    <h3>Sentra Pendidikan dan Pelatihan PT. Pegadaian (Persero) Padang</h3>
+            <div class="panel-body">
+                <div class="row">
+                    <?php 
+                        $nik = $_SESSION["username"];
+                        $instruktur_sql = "SELECT id, nik, nama FROM  tb_detail_instruktur WHERE nik = '$nik'";
+                        $instruktur_proses = mysqli_query($conn, $instruktur_sql);
+                        $instruktur_data = mysqli_fetch_assoc($instruktur_proses);
+                    ?>
+                    <div class="col-md-12">
+                        <table class="table">
+                            <tr class="success">
+                                <th colspan="2">Informasi Profil</th>
+                            </tr>
+                            <tr>
+                                <td>NIK</td>
+                                <td><?php echo $instruktur_data["nik"] ?></td>
+                            </tr>
+                            <tr>
+                                <td>Nama Lengkap</td>
+                                <td><?php echo $instruktur_data["nama"] ?></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>           
+            </div>
         </div>
     </div>
-    
-    
-    <script src="../../assets/js/jquery-admin.js"></script>
-    <script src="../../assets/js/bootstrap-admin.js"></script>
-    <script src="../../assets/js/jquery-adminMenu.js"></script>
-    <script src="../../assets/js/pace-admin.js"></script>
-    <script src="../../assets/js/siminta-admin.js"></script>
+    <div class="col-lg-8">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h5><strong>Daftar Jadwal Diklat</strong></h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php 
 
-</body>
+                            $instruktur_id = $instruktur_data["id"];
+                            $jadwal_sql = "
+                                SELECT tb_angkatan.nama_diklat, tb_mata_pelajaran.nama_pelajaran, tb_jadwal_diklat.tgl, tb_jadwal_diklat.tgl,tb_jadwal_diklat.waktu_mulai, tb_jadwal_diklat.waktu_selesai
+                                    FROM tb_jadwal_diklat
+                                    JOIN tb_angkatan ON tb_jadwal_diklat.angkatan_id = tb_angkatan.id
+                                    JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
+                                    WHERE tb_jadwal_diklat.detail_instruktur_id = '$instruktur_id'
+                            ";
+                            $jadwal_proses = mysqli_query($conn, $jadwal_sql);
 
-</html>
+                        ?>
+                        <table class="table table-bordered">
+                            <tr class="success">
+                                <th>No</th>
+                                <th>Nama Diklat</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Tanggal</th>
+                                <th>Masuk</th>
+                                <th>Keluar</th>
+                            </tr>
+                            <?php 
+                                $no = 1;
+                                while ($jadwal_data = mysqli_fetch_assoc($jadwal_proses)) {
+                                    ?>
+                                    
+                                    <tr>
+                                        <td><?php echo $no ?></td>
+                                        <td><?php echo $jadwal_data["nama_diklat"] ?></td>
+                                        <td><?php echo $jadwal_data["nama_pelajaran"] ?></td>
+                                        <td><?php echo $jadwal_data["tgl"] ?></td>
+                                        <td><?php echo $jadwal_data["waktu_mulai"] ?></td>
+                                        <td><?php echo $jadwal_data["waktu_selesai"] ?></td>
+                                    </tr>
+
+                                    <?php
+                                    $no++;
+                                }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

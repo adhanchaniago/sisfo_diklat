@@ -122,6 +122,10 @@
                         include "angkatan_diklat/input-angkatan.php";
                     } elseif ($page == 'lihat-angkatan') {
                         include "angkatan_diklat/lihat-angkatan.php";
+                    } elseif ($page == 'input-kamar') {
+                        include "kamar/input-kamar.php";
+                    } elseif ($page == 'lihat-kamar') {
+                        include "kamar/lihat-kamar.php";
                     }
 
                 }

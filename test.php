@@ -10,7 +10,7 @@
     <div class="col-lg-8">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h4>Form Input Data Staff</h4>
+                <h5><strong>Title</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">

@@ -2,7 +2,7 @@
     <div class="col-lg-6">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h4>Form Input Data Asmen</h4>
+                <h5><strong><i class="fa fa-address-card"></i>&nbsp;Form Input Data Asisten Manajer</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
