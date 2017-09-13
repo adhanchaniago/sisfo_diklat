@@ -44,10 +44,10 @@
                             $instruktur_id = $instruktur_data["id"];
                             $jadwal_sql = "
                                 SELECT tb_angkatan.nama_diklat, tb_mata_pelajaran.nama_pelajaran, tb_jadwal_diklat.tgl, tb_jadwal_diklat.tgl,tb_jadwal_diklat.waktu_mulai, tb_jadwal_diklat.waktu_selesai
-                                    FROM tb_jadwal_diklat
-                                    JOIN tb_angkatan ON tb_jadwal_diklat.angkatan_id = tb_angkatan.id
-                                    JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
-                                    WHERE tb_jadwal_diklat.detail_instruktur_id = '$instruktur_id'
+                                FROM tb_jadwal_diklat
+                                JOIN tb_angkatan ON tb_jadwal_diklat.angkatan_id = tb_angkatan.id
+                                JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
+                                WHERE tb_jadwal_diklat.detail_instruktur_id = '$instruktur_id'
                             ";
                             $jadwal_proses = mysqli_query($conn, $jadwal_sql);
 

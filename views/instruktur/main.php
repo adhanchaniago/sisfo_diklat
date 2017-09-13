@@ -100,6 +100,10 @@
                         include "nilai/pilih-angkatan.php";
                     } elseif ($page == 'input-nilai') {
                         include "nilai/input-nilai.php";
+                    } elseif ($page == 'pilih-angkatan2') {
+                        include "nilai/pilih-angkatan2.php";
+                    } elseif ($page == 'lihat-nilai') {
+                        include "nilai/lihat-nilai.php";
                     }
 
                 }

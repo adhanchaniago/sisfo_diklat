@@ -92,6 +92,10 @@
                         include "biodata/edit_biodata.php";
                     } elseif ($page == 'ubah-password') {
                         include "password/ubah_password.php";
+                    } elseif ($page == 'pilih-angkatan') {
+                        include "nilai/pilih-angkatan.php";
+                    } elseif ($page == 'lihat-nilai') {
+                        include "nilai/lihat-nilai.php";
                     }
 
                 }

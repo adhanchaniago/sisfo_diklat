@@ -25,6 +25,9 @@
             <li class="">
                 <a href="?page=home"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a>
             </li>
+            <li class="">
+                <a href="?page=pilih-angkatan"><i class="fa fa-home fa-fw"></i>&nbsp;Lihat Nilai</a>
+            </li>
         </ul>
     </div>
 </nav>

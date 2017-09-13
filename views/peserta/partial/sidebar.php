@@ -25,6 +25,22 @@
             <li class="">
                 <a href="?page=home"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Nilai<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="?page=lihat-nilai">Lihat Nilai</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Materi<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="?page=lihat-materi">Lihat Materi</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>

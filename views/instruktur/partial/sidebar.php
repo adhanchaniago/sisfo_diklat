@@ -43,7 +43,7 @@
                         <a href="?page=pilih-angkatan">Input Nilai</a>
                     </li>
                     <li>
-                        <a href="#">Lihat Nilai</a>
+                        <a href="?page=pilih-angkatan2">Lihat Nilai</a>
                     </li>
                 </ul>
             </li>
