@@ -12,6 +12,7 @@
                                 <th>NO</th>
                                 <th>NIK</th>
                                 <th>NAMA</th>
+                                <th>JEKEL</th>
                                 <th>TMP LAHIR</th>
                                 <th>TGL LAHIR</th>
                                 <th>ALAMAT</th>
@@ -35,6 +36,7 @@
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $data["nik"] ?></td>
                                     <td><?php echo $data["nama"] ?></td>
+                                    <td><?php echo $data["jekel"] ?></td>
                                     <td><?php echo $data["tempat_lahir"] ?></td>
                                     <td><?php echo $data["tgl_lahir"] ?></td>
                                     <td><?php echo $data["alamat"] ?></td>

@@ -2,13 +2,16 @@
 
 	session_start();
 
-	$nama = $_POST["nama"];
 	$nik = $_POST["nik"];
+	$nama = $_POST["nama"];
+	$jekel = $_POST["jekel"];
 	$tempatlahir = $_POST["tempatlahir"];
 	$tanggallahir = $_POST["tanggallahir"];
 	$alamat = $_POST["alamat"];
 	$nohp = $_POST["nohp"];
 	$password = md5($_POST["nik"]);
+
+	var_dump($jekel);
 
 	include "../../../config/koneksi.php";
 
@@ -18,8 +21,8 @@
 
 	if ($proses){
 
-		$sql2 = "INSERT INTO tb_detail_staff (user_akun_id, nik, nama,tempat_lahir, tgl_lahir, alamat, nomor_hp) VALUES ('$userakun_id', '$nik','$nama', '$tempatlahir', '$tanggallahir', '$alamat', '$nohp')";
-		$proses2 = mysqli_query($conn, $sql2);
+		$sql2 = "INSERT INTO tb_detail_staff (user_akun_id, nik, nama, jekel, tempat_lahir, tgl_lahir, alamat, nomor_hp) VALUES ('$userakun_id', '$nik','$nama', '$jekel', '$tempatlahir', '$tanggallahir', '$alamat', '$nohp')";
+		$proses2 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
 
 		if ($proses2){
 
@@ -31,7 +34,7 @@
 			
 			$_SESSION["flash"] = "gagal";
 			$_SESSION["message"] = "Telah terjadi kesalahan!";
-			header("Location: ../main.php?page=input-admin");
+			header("Location: ../main.php?page=input-staff");
 
 		}
  
@@ -39,7 +42,7 @@
 
 		$_SESSION["flash"] = "gagal";
 		$_SESSION["message"] = "Telah terjadi kesalahan!";
-		header("Location: ../main.php?page=input-admin");
+		header("Location: ../main.php?page=input-staff");
 
 	}
 

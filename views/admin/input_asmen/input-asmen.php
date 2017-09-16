@@ -9,13 +9,21 @@
                     <div class="col-md-12">
                         <form method="POST" action="proses_input/proses_input_asmen.php">
                             <div class="form-grup">
+                                <label for="nik">NIK</label>
+                                <input type="text" class="form-control" id="nik" name="nik" placeholder="Nik">
+                            </div><br>
+                            <div class="form-grup">
                                 <label for="nama">Nama</label>
                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
                             </div><br>
-                            <div class="form-grup">
-                                <label for="nik">Nik</label>
-                                <input type="text" class="form-control" id="nik" name="nik" placeholder="Nik">
-                            </div><br>
+                            <div class="form-group">
+                                <label for="jekel">Jenis Kelamin</label>
+                                <select class="form-control" name="jekel">
+                                    <option value="">Pilih Jenis Kelamin</option>
+                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
                             <div class="form-grup">
                                 <label for="tempatlahir">Tempat Lahir</label>
                                 <input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Tempat Lahir">

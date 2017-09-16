@@ -2,8 +2,9 @@
 
 	session_start();
 
-	$nama = $_POST["nama"];
 	$nik = $_POST["nik"];
+	$nama = $_POST["nama"];
+	$jekel = $_POST["jekel"];
 	$tempatlahir = $_POST["tempatlahir"];
 	$tanggallahir = $_POST["tanggallahir"];
 	$alamat = $_POST["alamat"];
@@ -18,7 +19,7 @@
 
 	if ($proses){
 
-		$sql2 = "INSERT INTO tb_detail_asmen (user_akun_id, nik, nama,tempat_lahir, tgl_lahir, alamat, nomor_hp) VALUES ('$userakun_id', '$nik','$nama', '$tempatlahir', '$tanggallahir', '$alamat', '$nohp')";
+		$sql2 = "INSERT INTO tb_detail_asmen (user_akun_id, nik, nama, jekel, tempat_lahir, tgl_lahir, alamat, nomor_hp) VALUES ('$userakun_id', '$nik','$nama', '$jekel', '$tempatlahir', '$tanggallahir', '$alamat', '$nohp')";
 		$proses2 = mysqli_query($conn, $sql2);
 
 		if ($proses2){

@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h4>Tabel Data Asisten Manajer</h4>
+                <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Staff</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="">
@@ -12,6 +12,7 @@
                                 <th>NO</th>
                                 <th>NIK</th>
                                 <th>NAMA</th>
+                                <th>JEKEL</th>
                                 <th>TMP LAHIR</th>
                                 <th>TGL LAHIR</th>
                                 <th>ALAMAT</th>
@@ -35,6 +36,7 @@
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $data["nik"] ?></td>
                                     <td><?php echo $data["nama"] ?></td>
+                                    <td><?php echo $data["jekel"] ?></td>
                                     <td><?php echo $data["tempat_lahir"] ?></td>
                                     <td><?php echo $data["tgl_lahir"] ?></td>
                                     <td><?php echo $data["alamat"] ?></td>
