@@ -90,22 +90,42 @@
                         include "home.php";
                     } elseif ($page == 'input-admin') {
                         include "input_admin/input-admin.php";
+                    } elseif ($page == 'ubah-admin') {
+                        include "input_admin/ubah-admin.php";
+                    } elseif ($page == 'hapus-admin') {
+                        include "input_admin/hapus-admin.php";
                     } elseif ($page == 'lihat-admin') {
                         include "input_admin/lihat-biodata-admin.php";
                     } elseif ($page == 'input-asmen') {
                         include "input_asmen/input-asmen.php";
+                    } elseif ($page == 'ubah-asmen') {
+                        include "input_asmen/ubah-asmen.php";
+                    } elseif ($page == 'hapus-asmen') {
+                        include "input_asmen/hapus-asmen.php";
                     } elseif ($page == 'lihat-asmen') {
                         include "input_asmen/lihat-biodata-asmen.php";
                     } elseif ($page == 'input-staff') {
                         include "input_staff/input-staff.php";
+                    } elseif ($page == 'ubah-staff') {
+                        include "input_staff/ubah-staff.php";
+                    } elseif ($page == 'hapus-staff') {
+                        include "input_staff/hapus-staff.php";
                     } elseif ($page == 'lihat-staff') {
                         include "input_staff/lihat-biodata-staff.php";
                     } elseif ($page == 'input-instruktur') {
                         include "input_instruktur/input-instruktur.php";
+                    } elseif ($page == 'ubah-instruktur') {
+                        include "input_instruktur/ubah-instruktur.php";
+                    } elseif ($page == 'hapus-instruktur') {
+                        include "input_instruktur/hapus-instruktur.php";
                     } elseif ($page == 'lihat-instruktur') {
                         include "input_instruktur/lihat-biodata-instruktur.php";
                     } elseif ($page == 'input-peserta') {
                         include "input_peserta/input-peserta.php";
+                    } elseif ($page == 'ubah-peserta') {
+                        include "input_peserta/ubah-peserta.php";
+                    } elseif ($page == 'hapus-peserta') {
+                        include "input_peserta/hapus-peserta.php";
                     } elseif ($page == 'lihat-peserta') {
                         include "input_peserta/lihat-biodata-peserta.php";
                     } elseif ($page == 'ubah-password') {
@@ -120,12 +140,18 @@
                         include "jadwal_diklat/lihat-jadwal.php";
                     } elseif ($page == 'input-angkatan') {
                         include "angkatan_diklat/input-angkatan.php";
+                    } elseif ($page == 'ubah-angkatan') {
+                        include "angkatan_diklat/ubah-angkatan.php";
+                    } elseif ($page == 'hapus-angkatan') {
+                        include "angkatan_diklat/hapus-angkatan.php";
                     } elseif ($page == 'lihat-angkatan') {
                         include "angkatan_diklat/lihat-angkatan.php";
                     } elseif ($page == 'input-kamar') {
                         include "kamar/input-kamar.php";
                     } elseif ($page == 'lihat-kamar') {
                         include "kamar/lihat-kamar.php";
+                    } elseif ($page == 'pilih-angkatan') {
+                        include "angkatan_diklat/pilih-angkatan.php";
                     }
 
                 }
