@@ -1,15 +1,15 @@
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong><i class="fa fa-address-card"></i>&nbsp;Form Input Data Jadwal Diklat</strong></h5>
+                <h5><strong><i class="fa fa-address-card"></i>&nbsp;Input Data Jadwal Diklat</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
                         <form action="jadwal_diklat/proses-input-jadwal.php" method="POST">
                             <div class="form-group">
-                                <label for="angkatan_id">Angkatan Diklat</label>
+                                <label for="angkatan_id">Angkatan Diklat :</label>
                                 <select name="angkatan_id" id="angkatan_id" class="form-control">
                                     <option value="">Pilih Angkatan Diklat</option>
                                     <?php
@@ -24,7 +24,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="mata_pelajaran_id">Mata Pelajaran</label>
+                                <label for="mata_pelajaran_id">Mata Pelajaran :</label>
                                 <select name="mata_pelajaran_id" id="mata_pelajaran_id" class="form-control">
                                     <option value="">Pilih Mata Pelajaran</option>
                                     <?php
@@ -39,7 +39,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="detail_instruktur_id">Instruktur</label>
+                                <label for="detail_instruktur_id">Instruktur :</label>
                                 <select name="detail_instruktur_id" id="detail_instruktur_id" class="form-control">
                                     <option value="">Pilih Intruktur</option>
                                     <?php
@@ -54,7 +54,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="hari">Hari</label>
+                                <label for="hari">Hari :</label>
                                 <select name="hari" id="hari" class="form-control">
                                     <option value="">Pilih Hari</option>
                                     <option value="Senin">Senin</option>
@@ -67,19 +67,43 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="tgl">Tanggal</label>
+                                <label for="tgl">Tanggal :</label>
                                 <input type="text" class="form-control datepicker" name="tgl" placeholder="Tanggal" data-date-format="yyyy-mm-dd">
                             </div>
                             <div class="form-group">
-                                <label for="waktu_selesai">Waktu Mulai</label>
+                                <label for="waktu_selesai">Waktu Mulai :</label>
                                 <input type="text" class="form-control" name="waktu_mulai" placeholder="Waktu Mulai">
                             </div>
                             <div class="form-group">
-                                <label for="waktu_selesai">Waktu Selesai</label>
+                                <label for="waktu_selesai">Waktu Selesai :</label>
                                 <input type="text" class="form-control" name="waktu_selesai" placeholder="Waktu Selesai">
+                            </div><hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Simpan</button>&nbsp;
+                                <button type="reset" class="btn btn-default">Reset</button>
                             </div>
-                            <button type="submit" class="btn btn-success">Simpan</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h5><strong><i class="fa fa-info-circle"></i>&nbsp;Informasi</strong></h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Silahkan dilengkapi semua form input disamping dengan data yang valid.
+                        </p>
+                        <p>
+                            Terima Kasih.
+                        </p>
+                        <hr>
+                        <a href="?page=pilih-angkatan&show=jadwal" class="btn btn-default btn-block">Data Jadwal Diklat</a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Kamar</strong></h5>
@@ -9,17 +9,15 @@
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
                             <tr>
-                                <th>NO</th>
-                                <th>NAMA ASRAMA</th>
-                                <th>NOMOR KAMAR</th>
-                                <th>AKSI</th>
+                                <th>#</th>
+                                <th>Nama Asrama</th>
+                                <th>Nomor Kamar</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <?php
 
-                                $no = 1;
                                 $sql = "SELECT * FROM tb_kamar";
                                 $proses = mysqli_query($conn, $sql);
             
@@ -28,17 +26,23 @@
                             ?>
 
                                 <tr>
-                                    <td><?php echo $no; ?></td>
+                                    <td>
+                                        <div class="dropdown">
+                                        <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                                AKSI &nbsp;
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?page=ubah-kamar&id=<?php echo $data['id'] ?>">Ubah Data</a></li>
+                                                <li><a href="?page=hapus-kamar&id=<?php echo $data['id'] ?>">Hapus Data</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
                                     <td><?php echo $data["nama_asrama"] ?></td>
                                     <td><?php echo $data["nomor_kamar"] ?></td>
-                                    <td>
-                                        <a href="#" class="btn btn-xs btn-success">UBAH</a>
-                                        <a href="#" class="btn btn-xs btn-danger">HAPUS</a>
-                                    </td>
                                 </tr>
 
                             <?php
-                                    $no++;
                                 }
                             ?>
 

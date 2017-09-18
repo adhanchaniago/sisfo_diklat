@@ -10,7 +10,7 @@
                         <form method="POST" action="proses_input/proses_input_instruktur.php">
                             <div class="form-grup">
                                 <label for="nik">NIK :</label>
-                                <input type="text" class="form-control" id="nik" name="nik" placeholder="Nik">
+                                <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
                             </div><br>
                             <div class="form-grup">
                                 <label for="nama">Nama Lengkap :</label>
@@ -45,6 +45,27 @@
                                 <button type="reset" class="btn btn-default">Reset</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h5><strong><i class="fa fa-info-circle"></i>&nbsp;Informasi</strong></h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Silahkan dilengkapi semua form input disamping dengan data yang valid.
+                        </p>
+                        <p>
+                            Terima Kasih.
+                        </p>
+                        <hr>
+                        <a href="?page=lihat-instruktur" class="btn btn-default btn-block">Data Instruktur</a>
                     </div>
                 </div>
             </div>

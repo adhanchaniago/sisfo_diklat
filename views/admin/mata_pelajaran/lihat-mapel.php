@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Mata Pelajaran</strong></h5>
@@ -9,16 +9,14 @@
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
                             <tr>
-                                <th>NO</th>
-                                <th>NAMA MATA PELAJARAN</th>
-                                <th>AKSI</th>
+                                <th>#</th>
+                                <th>Nama Mata Pelajaran</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <?php
 
-                                $no = 1;
                                 $sql = "SELECT * FROM tb_mata_pelajaran";
                                 $proses = mysqli_query($conn, $sql);
             
@@ -27,16 +25,22 @@
                             ?>
 
                                 <tr>
-                                    <td><?php echo $no; ?></td>
-                                    <td><?php echo $data["nama_pelajaran"] ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-xs btn-success">UBAH</a>
-                                        <a href="#" class="btn btn-xs btn-danger">HAPUS</a>
+                                        <div class="dropdown">
+                                        <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                                AKSI &nbsp;
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?page=ubah-mapel&id=<?php echo $data['id'] ?>">Ubah Data</a></li>
+                                                <li><a href="?page=hapus-mapel&id=<?php echo $data['id'] ?>">Hapus Data</a></li>
+                                            </ul>
+                                        </div>
                                     </td>
+                                    <td><?php echo $data["nama_pelajaran"] ?></td>
                                 </tr>
 
                             <?php
-                                    $no++;
                                 }
                             ?>
 

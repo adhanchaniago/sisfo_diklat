@@ -14,6 +14,10 @@
 
                             if ($show == 'peserta') {
                                 $target = 'lihat-peserta';
+                            } elseif ($show == 'jadwal') {
+                                $target = 'lihat-jadwal';
+                            } elseif ($show == 'nilai') {
+                                $target = 'lihat-nilai';
                             }
 
                         ?>

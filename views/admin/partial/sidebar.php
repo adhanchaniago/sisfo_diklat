@@ -95,21 +95,21 @@
                 <a href="#"><i class="fa fa-clipboard fa-fw"></i>&nbsp;Mata Pelajaran<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=input-mapel">Input Mata Pelajaran </a>
+                        <a href="?page=input-mapel"><i class="fa fa-angle-right"></i> Input Mata Pelajaran </a>
                     </li>
                     <li>
-                        <a href="?page=lihat-mapel">Lihat Mata Pelajaran</a>
+                        <a href="?page=lihat-mapel"><i class="fa fa-angle-right"></i> Data Mata Pelajaran</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-clipboard fa-fw"></i>&nbsp;Kamar<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-building fa-fw"></i>&nbsp;Kamar<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=input-kamar">Input Kamar</a>
+                        <a href="?page=input-kamar"><i class="fa fa-angle-right"></i> Input Kamar</a>
                     </li>
                     <li>
-                        <a href="?page=lihat-kamar">Lihat Kamar</a>
+                        <a href="?page=lihat-kamar"><i class="fa fa-angle-right"></i> Data Kamar</a>
                     </li>
                 </ul>
             </li>
@@ -117,18 +117,18 @@
                 <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Jadwal Diklat<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=input-jadwal">Input Jadwal Diklat </a>
+                        <a href="?page=input-jadwal"><i class="fa fa-angle-right"></i> Input Jadwal Diklat </a>
                     </li>
                     <li>
-                        <a href="?page=lihat-jadwal">Lihat Jadwal Diklat</a>
+                        <a href="?page=pilih-angkatan&show=jadwal"><i class="fa fa-angle-right"></i> Data Jadwal Diklat</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-id-badge fa-fw"></i>&nbsp;Rekap Nilai<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Nilai Peserta<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Lihat Nilai Peserta</a>
+                        <a href="?page=pilih-angkatan&show=nilai"><i class="fa fa-angle-right"></i> Data Nilai Peserta</a>
                     </li>
                 </ul>
             </li>

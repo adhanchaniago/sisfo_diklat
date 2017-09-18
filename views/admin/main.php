@@ -132,6 +132,10 @@
                         include "password/ubah_password.php";
                     } elseif ($page == 'input-mapel') {
                         include "mata_pelajaran/input-mapel.php";
+                    } elseif ($page == 'ubah-mapel') {
+                        include "mata_pelajaran/ubah-mapel.php";
+                    } elseif ($page == 'hapus-mapel') {
+                        include "mata_pelajaran/hapus-mapel.php";
                     } elseif ($page == 'lihat-mapel') {
                         include "mata_pelajaran/lihat-mapel.php";
                     } elseif ($page == 'input-jadwal') {
@@ -148,10 +152,16 @@
                         include "angkatan_diklat/lihat-angkatan.php";
                     } elseif ($page == 'input-kamar') {
                         include "kamar/input-kamar.php";
+                    } elseif ($page == 'ubah-kamar') {
+                        include "kamar/ubah-kamar.php";
+                    } elseif ($page == 'hapus-kamar') {
+                        include "kamar/hapus-kamar.php";
                     } elseif ($page == 'lihat-kamar') {
                         include "kamar/lihat-kamar.php";
                     } elseif ($page == 'pilih-angkatan') {
                         include "angkatan_diklat/pilih-angkatan.php";
+                    } elseif ($page == 'lihat-nilai') {
+                        include "nilai/lihat-nilai.php";
                     }
 
                 }
