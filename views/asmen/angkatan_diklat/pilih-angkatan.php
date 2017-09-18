@@ -7,10 +7,25 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="main.php?page=lihat-nilai" method="POST">
+                        <?php
+
+                            $show = $_GET["show"];
+                            $target = "";
+
+                            if ($show == 'peserta') {
+                                $target = 'lihat-peserta';
+                            } elseif ($show == 'jadwal') {
+                                $target = 'lihat-jadwal';
+                            } elseif ($show == 'nilai') {
+                                $target = 'lihat-nilai';
+                            }
+
+                        ?>
+                        <form action="main.php" method="GET">
                             <div class="form-group">
-                                <label for="angkatan_id">Pilih Angkatan Diklat</label>
-                                <select name="angkatan_id" id="angkatan_id" class="form-control">
+                                <input type="hidden" name="page" value="<?php echo $target ?>">
+                                <label for="angkatan_id">Pilih Angkatan Diklat :</label>
+                                <select name="id" id="id" class="form-control">
                                     <option value="">Pilih Angkatan Diklat</option>
                                     <?php
                                         $angkatan_sql = "SELECT * FROM tb_angkatan";
@@ -22,8 +37,10 @@
                                         }
                                     ?>
                                 </select>
+                            </div><hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Lanjut</button>
                             </div>
-                            <button type="submit" class="btn btn-success">Lanjut</button>
                         </form>
                     </div>
                 </div>

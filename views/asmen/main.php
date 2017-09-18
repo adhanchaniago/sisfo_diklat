@@ -93,9 +93,13 @@
                     } elseif ($page == 'ubah-password') {
                         include "password/ubah_password.php";
                     } elseif ($page == 'pilih-angkatan') {
-                        include "nilai/pilih-angkatan.php";
+                        include "angkatan_diklat/pilih-angkatan.php";
                     } elseif ($page == 'lihat-nilai') {
                         include "nilai/lihat-nilai.php";
+                    } elseif ($page == 'lihat-jadwal') {
+                        include "jadwal_diklat/lihat-jadwal.php";
+                    } elseif ($page == 'lihat-peserta') {
+                        include "peserta/lihat-peserta.php";
                     }
 
                 }

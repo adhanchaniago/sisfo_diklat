@@ -12,7 +12,7 @@
 	include "../../../config/koneksi.php";
 
 	$sql = "
-		UPDATE tb_detail_instruktur SET nama = '$nama', tempat_lahir = '$tmp_lahir', tgl_lahir = '$tgl_lahir', 
+		UPDATE tb_detail_asmen SET nama = '$nama', tempat_lahir = '$tmp_lahir', tgl_lahir = '$tgl_lahir', 
 		alamat = '$alamat', nomor_hp = '$telepon' WHERE nik = '$nik'
 	";
 	$proses = mysqli_query($conn, $sql);

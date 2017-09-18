@@ -2,7 +2,7 @@
     <div class="col-lg-6">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong>Selamat Datang</strong></h5>
+                <h5><strong><i class="fa fa-info-circle"></i> Selamat Datang</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">

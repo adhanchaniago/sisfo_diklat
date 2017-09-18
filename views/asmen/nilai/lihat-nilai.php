@@ -2,13 +2,27 @@
     <div class="col-md-12">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Mata Pelajaran</strong></h5>
+                <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Nilai Peserta Diklat</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="">
+                    <?php 
+
+                        $angkatan_id = $_GET["id"];
+
+                        $angkatan_sql = "SELECT * FROM tb_angkatan WHERE id = '$angkatan_id'";
+                        $angkatan_proses = mysqli_query($conn, $angkatan_sql);
+                        $angkatan_data = mysqli_fetch_assoc($angkatan_proses);
+
+                    ?>
+                    <div class="text-center">
+                        <h3><?php echo $angkatan_data["nama_diklat"] ?></h3>
+                        <h4><?php echo $angkatan_data["tgl_masuk"] . " s/d " . $angkatan_data["tgl_selesai"] ?></h4>
+                        <hr>
+                    </div>
                     <table class="table table-bordered table-hover my-datatable">
                         <?php 
-                            $angkatan_id = $_POST["angkatan_id"];
+                            $angkatan_id = $_GET["id"];
                             $data_mapel_sql = "
                                 SELECT tb_mata_pelajaran.id, tb_mata_pelajaran.nama_pelajaran
                                 FROM tb_jadwal_diklat
@@ -42,7 +56,7 @@
                                 <td><?php echo $peserta_data["nik"] ?></td>
                                 <td><?php echo $peserta_data["nama"] ?></td>
                                 <?php 
-                                    $angkatan_id = $_POST["angkatan_id"];
+                                    $angkatan_id = $_GET["id"];
                                     $data_mapel_sql2 = "
                                         SELECT tb_mata_pelajaran.id AS mapel_id, tb_mata_pelajaran.nama_pelajaran
                                         FROM tb_jadwal_diklat
