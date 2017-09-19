@@ -44,8 +44,8 @@
                                     </td>
                                     <td><?php echo $data["nik"] ?></td>
                                     <td><?php echo $data["nama"] ?></td>
-                                    <td><?php echo $data["tempat_lahir"] ?></td>
-                                    <td><?php echo $data["tgl_lahir"] ?></td>
+                                    <td><?php echo $data["jekel"] ?></td>
+                                    <td><?php echo $data["tempat_lahir"].' / '.$data["tgl_lahir"] ?></td>
                                     <td><?php echo $data["alamat"] ?></td>
                                     <td><?php echo $data["nomor_hp"] ?></td>
                                 </tr>

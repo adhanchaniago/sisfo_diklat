@@ -94,10 +94,18 @@
                         include "password/ubah_password.php";
                     } elseif ($page == 'input-instruktur') {
                         include "input_instruktur/input-instruktur.php";
+                    } elseif ($page == 'ubah-instruktur') {
+                        include "input_instruktur/ubah-instruktur.php";
+                    } elseif ($page == 'hapus-instruktur') {
+                        include "input_instruktur/hapus-instruktur.php";
                     } elseif ($page == 'lihat-instruktur') {
                         include "input_instruktur/lihat-biodata-instruktur.php";
                     } elseif ($page == 'input-peserta') {
                         include "input_peserta/input-peserta.php";
+                    } elseif ($page == 'ubah-peserta') {
+                        include "input_peserta/ubah-peserta.php";
+                    } elseif ($page == 'hapus-peserta') {
+                        include "input_peserta/hapus-peserta.php";
                     } elseif ($page == 'lihat-peserta') {
                         include "input_peserta/lihat-biodata-peserta.php";
                     } elseif ($page == 'input-mapel') {
@@ -110,12 +118,24 @@
                         include "jadwal_diklat/lihat-jadwal.php";
                     } elseif ($page == 'input-angkatan') {
                         include "angkatan_diklat/input-angkatan.php";
+                    } elseif ($page == 'ubah-angkatan') {
+                        include "angkatan_diklat/ubah-angkatan.php";
+                    } elseif ($page == 'hapus-angkatan') {
+                        include "angkatan_diklat/hapus-angkatan.php";
                     } elseif ($page == 'lihat-angkatan') {
                         include "angkatan_diklat/lihat-angkatan.php";
                     } elseif ($page == 'input-kamar') {
                         include "kamar/input-kamar.php";
+                    } elseif ($page == 'ubah-kamar') {
+                        include "kamar/ubah-kamar.php";
+                    } elseif ($page == 'hapus-kamar') {
+                        include "kamar/hapus-kamar.php";
                     } elseif ($page == 'lihat-kamar') {
                         include "kamar/lihat-kamar.php";
+                    } elseif ($page == 'pilih-angkatan') {
+                        include "angkatan_diklat/pilih-angkatan.php";
+                    } elseif ($page == 'lihat-nilai') {
+                        include "nilai/lihat-nilai.php";
                     }
 
                 }

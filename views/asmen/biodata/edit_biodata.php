@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h5><strong><i class="fa fa-address-card"></i>&nbsp;Edit Profil</strong></h5>
@@ -11,7 +11,7 @@
 
                             $nik = $_SESSION["username"];
 
-                            $sql = "SELECT * FROM tb_detail_asmen WHERE nik = '$nik'";
+                            $sql = "SELECT * FROM tb_detail_staff WHERE nik = '$nik'";
                             $proses = mysqli_query($conn, $sql);
 
                             $data = mysqli_fetch_assoc($proses);
@@ -26,6 +26,14 @@
                                 <label for="nama">Nama Lengkap :</label>
                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="<?php echo $data["nama"] ?>">
                             </div><br>
+                            <div class="form-group">
+                                <label for="jekel">Jenis Kelamin :</label>
+                                <select class="form-control" name="jekel">
+                                    <option value="<?php echo $data["jekel"] ?>"><?php echo $data["jekel"] ?></option>
+                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
                             <div class="form-grup">
                                 <label for="tempatlahir">Tempat Lahir :</label>
                                 <input type="text" class="form-control" id="tempatlahir" name="tempatlahir" placeholder="Tempat Lahir" value="<?php echo $data["tempat_lahir"] ?>">
