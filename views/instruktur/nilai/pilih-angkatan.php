@@ -9,7 +9,7 @@
                     <div class="col-md-12">
                         <form action="main.php?page=input-nilai" method="POST">
                             <div class="form-group">
-                                <label for="angkatan_id">Pilih Angkatan Diklat</label>
+                                <label for="angkatan_id">Pilih Angkatan Diklat :</label>
                                 <select name="angkatan_id" id="angkatan_id" class="form-control">
                                     <option value="">Pilih Angkatan Diklat</option>
                                     <?php
@@ -22,8 +22,10 @@
                                         }
                                     ?>
                                 </select>
+                            </div><hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Lanjut</button>
                             </div>
-                            <button type="submit" class="btn btn-success">Lanjut</button>
                         </form>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
 
                             $nik = $_SESSION["username"];
 
-                            $sql = "SELECT * FROM tb_detail_staff WHERE nik = '$nik'";
+                            $sql = "SELECT * FROM tb_detail_asmen WHERE nik = '$nik'";
                             $proses = mysqli_query($conn, $sql);
 
                             $data = mysqli_fetch_assoc($proses);

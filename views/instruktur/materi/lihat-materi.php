@@ -1,17 +1,17 @@
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Mata Pelajaran</strong></h5>
+                <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Data Materi</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="">
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
                             <tr>
-                                <th>NO</th>
-                                <th>NAMA MATA PELAJARAN</th>
-                                <th>AKSI</th>
+                                <th>No</th>
+                                <th>Judul Materi</th>
+                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,8 +32,6 @@
                                     <td><?php echo $data["judul_materi"] ?></td>
                                     <td>
                                         <a href="<?php echo "../../assets/file/".$data["lokasi"] ?>" class="btn btn-xs btn-primary">DOWNLOAD</a>
-                                        <a href="#" class="btn btn-xs btn-success">UBAH</a>
-                                        <a href="#" class="btn btn-xs btn-danger">HAPUS</a>
                                     </td>
                                 </tr>
 

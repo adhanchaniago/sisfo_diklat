@@ -26,24 +26,24 @@
                 <a href="?page=home"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Materi<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Materi<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=input-materi">Upload Materi</a>
+                        <a href="?page=input-materi"><i class="fa fa-angle-right"></i> Upload Materi</a>
                     </li>
                     <li>
-                        <a href="?page=lihat-materi">Lihat Materi</a>
+                        <a href="?page=lihat-materi"><i class="fa fa-angle-right"></i> Data Materi</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Nilai<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Nilai<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=pilih-angkatan">Input Nilai</a>
+                        <a href="?page=pilih-angkatan"><i class="fa fa-angle-right"></i> Input Nilai</a>
                     </li>
                     <li>
-                        <a href="?page=pilih-angkatan2">Lihat Nilai</a>
+                        <a href="?page=pilih-angkatan2"><i class="fa fa-angle-right"></i> Data Nilai</a>
                     </li>
                 </ul>
             </li>
