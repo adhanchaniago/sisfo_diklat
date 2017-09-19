@@ -26,18 +26,26 @@
                 <a href="?page=home"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Nilai<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Jadwal<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=lihat-nilai">Lihat Nilai</a>
+                        <a href="?page=lihat-jadwal"><i class="fa fa-angle-right"></i> Lihat Jadwal</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-male fa-fw"></i>&nbsp;Materi<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Materi<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=lihat-materi">Lihat Materi</a>
+                        <a href="?page=lihat-materi"><i class="fa fa-angle-right"></i> Lihat Materi</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Nilai<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="?page=lihat-nilai"><i class="fa fa-angle-right"></i> Lihat Nilai</a>
                     </li>
                 </ul>
             </li>

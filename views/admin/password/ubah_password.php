@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h5><strong><i class="fa fa-address-card"></i>&nbsp;Ubah Password</strong></h5>

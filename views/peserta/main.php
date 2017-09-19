@@ -96,6 +96,8 @@
                         include "nilai/lihat_nilai.php";
                     } elseif ($page == 'lihat-materi') {
                         include "materi/lihat-materi.php";
+                    } elseif ($page == 'lihat-jadwal') {
+                        include "jadwal_diklat/lihat-jadwal.php";
                     }
 
                 }

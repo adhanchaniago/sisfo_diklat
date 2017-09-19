@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-md-8">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong>Lihat Nilai</strong></h5>
+                <h5><strong><i class="fa fa-table"></i>&nbsp;Tabel Nilai Diklat</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -17,7 +17,7 @@
 	                        $angkatan_id = $peserta_data["angkatan_id"];
 
 	                        $data_diklat_sql = "
-	                            SELECT tb_angkatan.id AS angkatan_id, tb_angkatan.nama_diklat, tb_mata_pelajaran.id AS mata_pelajaran_id, tb_mata_pelajaran.nama_pelajaran
+	                            SELECT tb_angkatan.id AS angkatan_id, tb_angkatan.nama_diklat, tb_angkatan.tgl_masuk, tb_angkatan.tgl_selesai, tb_mata_pelajaran.id AS mata_pelajaran_id, tb_mata_pelajaran.nama_pelajaran
 	                            FROM tb_jadwal_diklat
 	                            JOIN tb_angkatan ON tb_jadwal_diklat.angkatan_id = tb_angkatan.id
 	                            JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
@@ -30,14 +30,15 @@
 	                    ?>
 	                    <div class="text-center">
 	                        <p><h3><?php echo $data_diklat["nama_diklat"] ?></h3></p>
+	                        <p><h5><?php echo $data_diklat["tgl_masuk"].' s/d '.$data_diklat["tgl_selesai"] ?></h5></p>
 	                    </div><hr>
 	                    <table class="table table-bordered table-hover my-datatable">
 	                        <thead>
 	                            <tr>
-	                                <th>NO</th>
-	                                <th>MATA PELAJARAN</th>
-	                                <th>INSTRUKTUR</th>
-	                                <th>NILAI</th>
+	                                <th>No</th>
+	                                <th>Nama Mata Pelajaran</th>
+	                                <th>Nama Instruktur</th>
+	                                <th>Nilai Akhir</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>

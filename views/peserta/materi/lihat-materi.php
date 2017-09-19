@@ -9,9 +9,9 @@
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
                             <tr>
-                                <th>NO</th>
-                                <th>NAMA MATA PELAJARAN</th>
-                                <th>AKSI</th>
+                                <th>No</th>
+                                <th>Nama Mata Pelajaran</th>
+                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,8 +32,6 @@
                                     <td><?php echo $data["judul_materi"] ?></td>
                                     <td>
                                         <a href="<?php echo "../../assets/file/".$data["lokasi"] ?>" class="btn btn-xs btn-primary">DOWNLOAD</a>
-                                        <a href="#" class="btn btn-xs btn-success">UBAH</a>
-                                        <a href="#" class="btn btn-xs btn-danger">HAPUS</a>
                                     </td>
                                 </tr>
 

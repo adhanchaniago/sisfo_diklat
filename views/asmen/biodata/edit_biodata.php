@@ -60,4 +60,23 @@
             </div>
         </div>
     </div>
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h5><strong><i class="fa fa-info-circle"></i>&nbsp;Informasi</strong></h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Silahkan dilengkapi semua form input disamping dengan data yang valid.
+                        </p>
+                        <p>
+                            Terima Kasih.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
