@@ -140,6 +140,10 @@
                         include "mata_pelajaran/lihat-mapel.php";
                     } elseif ($page == 'input-jadwal') {
                         include "jadwal_diklat/input-jadwal.php";
+                    } elseif ($page == 'ubah-jadwal') {
+                        include "jadwal_diklat/ubah-jadwal.php";
+                    } elseif ($page == 'hapus-jadwal') {
+                        include "jadwal_diklat/hapus-jadwal.php";
                     } elseif ($page == 'lihat-jadwal') {
                         include "jadwal_diklat/lihat-jadwal.php";
                     } elseif ($page == 'input-angkatan') {

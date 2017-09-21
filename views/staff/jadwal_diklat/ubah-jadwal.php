@@ -2,16 +2,33 @@
     <div class="col-md-6">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong><i class="fa fa-address-card"></i>&nbsp;Input Jadwal Diklat</strong></h5>
+                <h5><strong><i class="fa fa-address-card"></i>&nbsp;Ubah Jadwal Diklat</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form action="jadwal_diklat/proses-input-jadwal.php" method="POST">
+                        <form action="jadwal_diklat/proses-ubah-jadwal.php" method="POST">
+                            <?php 
+
+                                $get_id = $_GET["id"];
+
+                                $jadwal_sql = "
+                                    SELECT tb_angkatan.id AS angkatan_id, tb_angkatan.nama_diklat, tb_mata_pelajaran.id AS mapel_id, tb_mata_pelajaran.nama_pelajaran, tb_detail_instruktur.id AS instruktur_id, tb_detail_instruktur.nama, tb_jadwal_diklat.id, tb_jadwal_diklat.hari, tb_jadwal_diklat.tgl, tb_jadwal_diklat.waktu_mulai, tb_jadwal_diklat.waktu_selesai
+                                    FROM tb_jadwal_diklat
+                                    JOIN tb_angkatan ON tb_jadwal_diklat.angkatan_id = tb_angkatan.id
+                                    JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
+                                    JOIN tb_detail_instruktur ON tb_jadwal_diklat.detail_instruktur_id = tb_detail_instruktur.id
+                                    WHERE tb_jadwal_diklat.id = '$get_id'
+                                ";
+                                $jadwal_proses = mysqli_query($conn, $jadwal_sql);
+                                $jadwal_data = mysqli_fetch_assoc($jadwal_proses);
+
+                            ?>
+                            <input type="hidden" name="id" value="<?php echo $jadwal_data["id"] ?>">
                             <div class="form-group">
                                 <label for="angkatan_id">Angkatan Diklat :</label>
                                 <select name="angkatan_id" id="angkatan_id" class="form-control">
-                                    <option value="">Pilih Angkatan Diklat</option>
+                                    <option value="<?php echo $jadwal_data["angkatan_id"] ?>"><?php echo $jadwal_data["nama_diklat"] ?></option>
                                     <?php
                                         $angkatan_sql = "SELECT * FROM tb_angkatan";
                                         $angkatan_proses = mysqli_query($conn, $angkatan_sql);
@@ -26,7 +43,7 @@
                             <div class="form-group">
                                 <label for="mata_pelajaran_id">Mata Pelajaran :</label>
                                 <select name="mata_pelajaran_id" id="mata_pelajaran_id" class="form-control">
-                                    <option value="">Pilih Mata Pelajaran</option>
+                                    <option value="<?php echo $jadwal_data["mapel_id"] ?>"><?php echo $jadwal_data["nama_pelajaran"] ?></option>
                                     <?php
                                         $mapel_sql = "SELECT * FROM tb_mata_pelajaran";
                                         $mapel_proses = mysqli_query($conn, $mapel_sql);
@@ -41,7 +58,7 @@
                             <div class="form-group">
                                 <label for="detail_instruktur_id">Instruktur :</label>
                                 <select name="detail_instruktur_id" id="detail_instruktur_id" class="form-control">
-                                    <option value="">Pilih Intruktur</option>
+                                    <option value="<?php echo $jadwal_data["instruktur_id"] ?>"><?php echo $jadwal_data["nama"] ?></option>
                                     <?php
                                         $instruktur_sql = "SELECT * FROM tb_detail_instruktur";
                                         $instruktur_proses = mysqli_query($conn, $instruktur_sql);
@@ -56,7 +73,7 @@
                             <div class="form-group">
                                 <label for="hari">Hari :</label>
                                 <select name="hari" id="hari" class="form-control">
-                                    <option value="">Pilih Hari</option>
+                                    <option value="<?php echo $jadwal_data["hari"] ?>"><?php echo $jadwal_data["hari"] ?></option>
                                     <option value="Senin">Senin</option>
                                     <option value="Selasa">Selasa</option>
                                     <option value="Rabu">Rabu</option>
@@ -68,19 +85,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="tgl">Tanggal :</label>
-                                <input type="text" class="form-control datepicker" name="tgl" placeholder="Tanggal" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control datepicker" name="tgl" placeholder="Tanggal" data-date-format="yyyy-mm-dd" value="<?php echo $jadwal_data["tgl"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="waktu_selesai">Waktu Mulai :</label>
-                                <input type="text" class="form-control" name="waktu_mulai" placeholder="Waktu Mulai">
+                                <input type="text" class="form-control" name="waktu_mulai" placeholder="Waktu Mulai" value="<?php echo $jadwal_data["waktu_mulai"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="waktu_selesai">Waktu Selesai :</label>
-                                <input type="text" class="form-control" name="waktu_selesai" placeholder="Waktu Selesai">
+                                <input type="text" class="form-control" name="waktu_selesai" placeholder="Waktu Selesai" value="<?php echo $jadwal_data["waktu_selesai"] ?>">
                             </div><hr>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Simpan</button>&nbsp;
-                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-success">Ubah</button>&nbsp;
+                                <button type="reset" class="btn btn-default">Reset</button>&nbsp;
+                                <a href="?page=lihat-kamar" class="pull-right"><button type="button" class="btn btn-danger">Batal</button></a>
                             </div>
                         </form>
                     </div>

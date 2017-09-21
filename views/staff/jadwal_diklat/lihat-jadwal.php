@@ -23,6 +23,7 @@
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>NO</th>
                                 <th>Hari / Tanggal</th>
                                 <th>Waktu</th>
@@ -52,6 +53,18 @@
                             ?>
 
                                 <tr>
+                                    <td>
+                                        <div class="dropdown">
+                                        <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                                AKSI &nbsp;
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?page=ubah-jadwal&id=<?php echo $data['id'] ?>">Ubah Data</a></li>
+                                                <li><a href="?page=hapus-jadwal&id=<?php echo $data['id'] ?>">Hapus Data</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $data["hari"]." / ".$data["tgl"] ?></td>
                                     <td><?php echo $data["waktu_mulai"].' s/d '.$data["waktu_selesai"] ?> WIB</td>
