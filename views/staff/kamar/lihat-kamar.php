@@ -8,10 +8,10 @@
                 <div class="">
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama Asrama</th>
-                                <th>Nomor Kamar</th>
+                            <tr class="success">
+                                <th class="text-center">#</th>
+                                <th class="text-center">Nama Asrama</th>
+                                <th class="text-center">Nomor Kamar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +26,7 @@
                             ?>
 
                                 <tr>
-                                    <td>
+                                    <td class="text-center">
                                         <div class="dropdown">
                                         <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                                 AKSI &nbsp;
@@ -38,8 +38,8 @@
                                             </ul>
                                         </div>
                                     </td>
-                                    <td><?php echo $data["nama_asrama"] ?></td>
-                                    <td><?php echo $data["nomor_kamar"] ?></td>
+                                    <td class="text-center"><?php echo $data["nama_asrama"] ?></td>
+                                    <td class="text-center"><?php echo $data["nomor_kamar"] ?></td>
                                 </tr>
 
                             <?php

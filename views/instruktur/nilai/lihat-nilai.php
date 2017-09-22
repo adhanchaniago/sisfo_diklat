@@ -7,7 +7,7 @@
             <div class="panel-body">
                 <div class="">
                     <?php 
-                        $angkatan_id = $_POST["angkatan_id"];
+                        $angkatan_id = $_GET["id"];
                         $instruktur_id = $_SESSION["id"];
 
                         $data_diklat_sql = "
@@ -25,17 +25,17 @@
                     ?>
                     <div class="text-center">
                         <p><h3><?php echo $data_diklat["nama_diklat"] ?></h3></p>
-                        <p><h3><?php echo $data_diklat["nama_pelajaran"] ?></h3></p>
+                        <h5><?php echo $data_diklat["nama_pelajaran"] ?></h5>
                     </div><hr>
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>NO</th>
-                                <th>NIK</th>
-                                <th>NAMA PESERTA</th>
-                                <th>CABANG ASAL</th>
-                                <th>TMP/ TGL LAHIR</th>
-                                <th>NILAI</th>
+                            <tr class="success">
+                                <th class="text-center">No</th>
+                                <th class="text-center">NIK</th>
+                                <th class="text-center">Nama Peserta</th>
+                                <th class="text-center">Cabang Asal</th>
+                                <th class="text-center">Tmpt / Tgl Lahir</th>
+                                <th class="text-center">Nilai</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,12 +61,12 @@
                             ?>
                                 
                                 <tr>
-                                    <td><?php echo $no ?></td>
-                                    <td><?php echo $data_nilai["nik"] ?></td>
+                                    <td class="text-center"><?php echo $no ?></td>
+                                    <td class="text-center"><?php echo $data_nilai["nik"] ?></td>
                                     <td><?php echo $data_nilai["nama"] ?></td>
                                     <td><?php echo $data_nilai["cabang_asal"] ?></td>
-                                    <td><?php echo $data_nilai["tempat_lahir"]." / ".$data_nilai["tgl_lahir"] ?></td>
-                                    <td><?php echo $data_nilai["nilai"] ?></td>
+                                    <td><?php echo $data_nilai["tempat_lahir"].", ".date('d M Y', strtotime($data_nilai["tgl_lahir"])) ?></td>
+                                    <td class="text-center"><?php echo $data_nilai["nilai"] ?></td>
                                 </tr>
 
                             <?php

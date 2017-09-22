@@ -22,6 +22,9 @@
     
     <title>Sisfo Diklat</title>
 
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
     <?php include "partial/style.php" ?>
 
 </head>
@@ -110,6 +113,10 @@
                         include "input_peserta/lihat-biodata-peserta.php";
                     } elseif ($page == 'input-mapel') {
                         include "mata_pelajaran/input-mapel.php";
+                    } elseif ($page == 'ubah-mapel') {
+                        include "mata_pelajaran/ubah-mapel.php";
+                    } elseif ($page == 'hapus-mapel') {
+                        include "mata_pelajaran/hapus-mapel.php";
                     } elseif ($page == 'lihat-mapel') {
                         include "mata_pelajaran/lihat-mapel.php";
                     } elseif ($page == 'input-jadwal') {

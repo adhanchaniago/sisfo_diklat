@@ -17,7 +17,7 @@
                     ?>
                     <div class="text-center">
                         <h3><?php echo $angkatan_data["nama_diklat"] ?></h3>
-                        <h4><?php echo $angkatan_data["tgl_masuk"] . " s/d " . $angkatan_data["tgl_selesai"] ?></h4>
+                        <h5>Periode : <?php echo date('d M Y', strtotime($angkatan_data["tgl_masuk"])) . " s/d " . date('d M Y', strtotime($angkatan_data["tgl_selesai"])) ?></h5>
                         <hr>
                     </div>
                     <table class="table table-bordered table-hover my-datatable">
@@ -33,13 +33,13 @@
 
                         ?>
                         <thead>
-                            <tr>
-                                <th>NO</th>
-                                <th>NIK</th>
-                                <th>NAMA</th>
+                            <tr class="success">
+                                <th class="text-center">No</th>
+                                <th class="text-center">NIK</th>
+                                <th class="text-center">NAMA</th>
                                 <?php 
                                     while ($data_mapel = mysqli_fetch_assoc($data_mapel_proses)) {
-                                        echo "<th>".$data_mapel["nama_pelajaran"]."</th>";
+                                        echo "<th class='text-center'>".$data_mapel["nama_pelajaran"]."</th>";
                                     }
                                 ?>
                             </tr>
@@ -52,8 +52,8 @@
                                 while ($peserta_data = mysqli_fetch_assoc($peserta_proses)) {
                             ?>
                             <tr>
-                                <td><?php echo $no ?></td>
-                                <td><?php echo $peserta_data["nik"] ?></td>
+                                <td class="text-center"><?php echo $no ?></td>
+                                <td class="text-center"><?php echo $peserta_data["nik"] ?></td>
                                 <td><?php echo $peserta_data["nama"] ?></td>
                                 <?php 
                                     $angkatan_id = $_GET["id"];
@@ -76,7 +76,7 @@
                                         $nilai_data = mysqli_fetch_assoc($nilai_proses);
                                     ?>
                                         
-                                        <td><?php echo $nilai_data["nilai"] ?></td>
+                                        <td class="text-center"><?php echo $nilai_data["nilai"] ?></td>
 
                                     <?php
                                     }

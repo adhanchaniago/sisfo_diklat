@@ -40,10 +40,10 @@
                 <a href="#"><i class="fa fa-book fa-fw"></i>&nbsp;Nilai<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=pilih-angkatan"><i class="fa fa-angle-right"></i> Input Nilai</a>
+                        <a href="?page=pilih-angkatan&show=input-nilai"><i class="fa fa-angle-right"></i> Input Nilai</a>
                     </li>
                     <li>
-                        <a href="?page=pilih-angkatan2"><i class="fa fa-angle-right"></i> Data Nilai</a>
+                        <a href="?page=pilih-angkatan&show=lihat-nilai"><i class="fa fa-angle-right"></i> Data Nilai</a>
                     </li>
                 </ul>
             </li>

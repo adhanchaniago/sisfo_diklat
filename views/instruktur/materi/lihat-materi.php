@@ -8,10 +8,10 @@
                 <div class="">
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul Materi</th>
-                                <th>#</th>
+                            <tr class="success">
+                                <th class="text-center">No</th>
+                                <th class="text-center">Judul Materi</th>
+                                <th class="text-center">#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,9 +28,9 @@
                             ?>
 
                                 <tr>
-                                    <td><?php echo $no; ?></td>
+                                    <td class="text-center"><?php echo $no; ?></td>
                                     <td><?php echo $data["judul_materi"] ?></td>
-                                    <td>
+                                    <td class="text-center">
                                         <a href="<?php echo "../../assets/file/".$data["lokasi"] ?>" class="btn btn-xs btn-primary">DOWNLOAD</a>
                                     </td>
                                 </tr>

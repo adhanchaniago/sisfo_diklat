@@ -1,14 +1,14 @@
 <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-5">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong>Selamat Datang</strong></h5>
+                <h5><strong><i class="fa fa-info-circle"></i>&nbsp;Selamat Datang</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <?php 
                         $nik = $_SESSION["username"];
-                        $instruktur_sql = "SELECT id, nik, nama FROM  tb_detail_instruktur WHERE nik = '$nik'";
+                        $instruktur_sql = "SELECT * FROM  tb_detail_instruktur WHERE nik = '$nik'";
                         $instruktur_proses = mysqli_query($conn, $instruktur_sql);
                         $instruktur_data = mysqli_fetch_assoc($instruktur_proses);
                     ?>
@@ -19,22 +19,46 @@
                             </tr>
                             <tr>
                                 <td>NIK</td>
-                                <td><?php echo $instruktur_data["nik"] ?></td>
+                                <td><strong><?php echo $instruktur_data["nik"] ?></strong></td>
                             </tr>
                             <tr>
                                 <td>Nama Lengkap</td>
-                                <td><?php echo $instruktur_data["nama"] ?></td>
+                                <td><strong><?php echo $instruktur_data["nama"] ?></strong></td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Kelamin</td>
+                                <td><strong><?php echo $instruktur_data["jekel"] ?></strong></td>
+                            </tr>
+                            <tr>
+                                <td>Tmp /Tgl Lahir</td>
+                                <td>
+                                    <strong>
+                                        <?php echo $instruktur_data["tempat_lahir"].' / '.date("d M Y", strtotime($instruktur_data["tgl_lahir"])) ?>
+                                    </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Alamt</td>
+                                <td><strong><?php echo $instruktur_data["alamat"] ?></strong></td>
+                            </tr>
+                            <tr>
+                                <td>Nomor HP</td>
+                                <td><strong><?php echo $instruktur_data["nomor_hp"] ?></strong></td>
                             </tr>
                         </table>
+                        <hr>
+                        <a href="?page=edit-profil">
+                            <button type="button" class="btn btn-success btn-block">Edit Profil</button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-7">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong>Daftar Jadwal Diklat</strong></h5>
+                <h5><strong><i class="fa fa-table"></i>&nbsp;Daftar Jadwal Diklat</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -54,12 +78,12 @@
                         ?>
                         <table class="table table-bordered">
                             <tr class="success">
-                                <th>No</th>
-                                <th>Nama Diklat</th>
-                                <th>Mata Pelajaran</th>
-                                <th>Tanggal</th>
-                                <th>Masuk</th>
-                                <th>Keluar</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Tanggal</th>
+                                <th class="text-center">Nama Diklat</th>
+                                <th class="text-center">Mata Pelajaran</th>
+                                <th class="text-center">Masuk</th>
+                                <th class="text-center">Keluar</th>
                             </tr>
                             <?php 
                                 $no = 1;
@@ -67,12 +91,12 @@
                                     ?>
                                     
                                     <tr>
-                                        <td><?php echo $no ?></td>
+                                        <td class="text-center"><?php echo $no ?></td>
+                                        <td class="text-center"><?php echo date('d M Y', strtotime($jadwal_data["tgl"])) ?></td>
                                         <td><?php echo $jadwal_data["nama_diklat"] ?></td>
                                         <td><?php echo $jadwal_data["nama_pelajaran"] ?></td>
-                                        <td><?php echo $jadwal_data["tgl"] ?></td>
-                                        <td><?php echo $jadwal_data["waktu_mulai"] ?></td>
-                                        <td><?php echo $jadwal_data["waktu_selesai"] ?></td>
+                                        <td class="text-center"><?php echo $jadwal_data["waktu_mulai"] ?></td>
+                                        <td class="text-center"><?php echo $jadwal_data["waktu_selesai"] ?></td>
                                     </tr>
 
                                     <?php

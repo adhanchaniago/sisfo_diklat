@@ -17,20 +17,20 @@
                     ?>
                     <div class="text-center">
                         <h3><?php echo $angkatan_data["nama_diklat"] ?></h3>
-                        <h4><?php echo $angkatan_data["tgl_masuk"] . " s/d " . $angkatan_data["tgl_selesai"] ?></h4>
+                        <h5>Periode : <?php echo date('d M Y', strtotime($angkatan_data["tgl_masuk"])) . " s/d " . date('d M Y', strtotime($angkatan_data["tgl_selesai"])) ?></h5>
                         <hr>
                     </div>
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Absen</th>
-                                <th>NIK</th>
-                                <th>Nama Lengkap</th>
-                                <th>Tmp/Tgl Lahir</th>
-                                <th>Cabang Asal</th>
-                                <th>Asrama</th>
-                                <th>Kamar</th>
+                            <tr class="success">
+                                <th class="text-center">#</th>
+                                <th class="text-center">Absen</th>
+                                <th class="text-center">NIK</th>
+                                <th class="text-center">Nama Lengkap</th>
+                                <th class="text-center">Tmpt / Tgl Lahir</th>
+                                <th class="text-center">Cabang Asal</th>
+                                <th class="text-center">Asrama</th>
+                                <th class="text-center">Kamar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,7 +54,7 @@
                             ?>
 
                                 <tr>
-                                    <td>
+                                    <td class="text-center">
                                         <div class="dropdown">
                                         <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                                 AKSI &nbsp;
@@ -66,13 +66,13 @@
                                             </ul>
                                         </div>
                                     </td>
-                                    <td><?php echo $data["nomor_absen"] ?></td>
-                                    <td><?php echo $data["nik"] ?></td>
+                                    <td class="text-center"><?php echo $data["nomor_absen"] ?></td>
+                                    <td class="text-center"><?php echo $data["nik"] ?></td>
                                     <td><?php echo $data["nama"] ?></td>
-                                    <td><?php echo $data["tempat_lahir"]." / ".$data["tgl_lahir"] ?></td>
+                                    <td><?php echo $data["tempat_lahir"].", ".date('d M Y', strtotime($data["tgl_lahir"])) ?></td>
                                     <td><?php echo $data["cabang_asal"] ?></td>
-                                    <td><?php echo $data["nama_asrama"] ?></td>
-                                    <td><?php echo $data["nomor_kamar"] ?></td>
+                                    <td class="text-center"><?php echo $data["nama_asrama"] ?></td>
+                                    <td class="text-center"><?php echo $data["nomor_kamar"] ?></td>
                                 </tr>
 
                             <?php

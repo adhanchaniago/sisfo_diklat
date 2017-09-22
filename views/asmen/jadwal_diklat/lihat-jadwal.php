@@ -17,17 +17,17 @@
                     ?>
                     <div class="text-center">
                         <h3><?php echo $angkatan_data["nama_diklat"] ?></h3>
-                        <h4><?php echo $angkatan_data["tgl_masuk"] . " s/d " . $angkatan_data["tgl_selesai"] ?></h4>
+                        <h5>Periode : <?php echo date('d M Y', strtotime($angkatan_data["tgl_masuk"])) . " s/d " . date('d M Y', strtotime($angkatan_data["tgl_selesai"])) ?></h5>
                         <hr>
                     </div>
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>NO</th>
-                                <th>Hari / Tanggal</th>
-                                <th>Waktu</th>
-                                <th>Mata Pelajaran</th>
-                                <th>Nama Instruktur</th>
+                            <tr class="success">
+                                <th class="text-center">No</th>
+                                <th class="text-center">Hari / Tanggal</th>
+                                <th class="text-center">Waktu</th>
+                                <th class="text-center">Mata Pelajaran</th>
+                                <th class="text-center">Nama Instruktur</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,9 +52,9 @@
                             ?>
 
                                 <tr>
-                                    <td><?php echo $no; ?></td>
-                                    <td><?php echo $data["hari"]." / ".$data["tgl"] ?></td>
-                                    <td><?php echo $data["waktu_mulai"].' s/d '.$data["waktu_selesai"] ?> WIB</td>
+                                    <td class="text-center"><?php echo $no; ?></td>
+                                    <td class="text-center"><?php echo $data["hari"].", ".date('d M Y', strtotime($data["tgl"])) ?></td>
+                                    <td class="text-center"><?php echo $data["waktu_mulai"].' s/d '.$data["waktu_selesai"] ?></td>
                                     <td><?php echo $data["nama_pelajaran"] ?></td>
                                     <td><?php echo $data["nama"] ?></td>
                                 </tr>

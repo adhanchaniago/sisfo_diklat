@@ -2,7 +2,7 @@
     <div class="col-lg-6">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h5><strong>Pilih Angkatan Diklat</strong></h5>
+                <h5><strong><i class="fa fa-info-circle"></i> Pilih Angkatan Diklat</strong></h5>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -24,7 +24,7 @@
                         <form action="main.php" method="GET">
                             <div class="form-group">
                                 <input type="hidden" name="page" value="<?php echo $target ?>">
-                                <label for="angkatan_id">Pilih Angkatan Diklat</label>
+                                <label for="angkatan_id">Pilih Angkatan Diklat :</label>
                                 <select name="id" id="id" class="form-control">
                                     <option value="">Pilih Angkatan Diklat</option>
                                     <?php
@@ -37,8 +37,10 @@
                                         }
                                     ?>
                                 </select>
+                            </div><hr>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Lanjut</button>
                             </div>
-                            <button type="submit" class="btn btn-success">Lanjut</button>
                         </form>
                     </div>
                 </div>

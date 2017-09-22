@@ -8,9 +8,9 @@
                 <div class="">
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama Mata Pelajaran</th>
+                            <tr class="success">
+                                <th class="text-center">#</th>
+                                <th class="text-center">Nama Mata Pelajaran</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,7 +25,7 @@
                             ?>
 
                                 <tr>
-                                    <td>
+                                    <td class="text-center">
                                         <div class="dropdown">
                                         <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                                 AKSI &nbsp;

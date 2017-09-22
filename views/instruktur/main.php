@@ -22,6 +22,9 @@
     
     <title>Sisfo Diklat</title>
 
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
     <?php include "partial/style.php" ?>
 
 </head>
@@ -96,14 +99,12 @@
                         include "materi/input-materi.php";
                     } elseif ($page == 'lihat-materi') {
                         include "materi/lihat-materi.php";
-                    } elseif ($page == 'pilih-angkatan') {
-                        include "nilai/pilih-angkatan.php";
                     } elseif ($page == 'input-nilai') {
                         include "nilai/input-nilai.php";
-                    } elseif ($page == 'pilih-angkatan2') {
-                        include "nilai/pilih-angkatan2.php";
                     } elseif ($page == 'lihat-nilai') {
                         include "nilai/lihat-nilai.php";
+                    } elseif ($page == 'pilih-angkatan') {
+                        include "angkatan_diklat/pilih-angkatan.php";
                     }
 
                 }

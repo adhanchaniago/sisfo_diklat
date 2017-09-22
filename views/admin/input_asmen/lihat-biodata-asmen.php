@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h5><strong><i class="fa fa-table"></i>&nbsp; Tabel Data Asisten Manajer</strong></h5>
@@ -8,14 +8,14 @@
                 <div class="">
                     <table class="table table-bordered table-hover my-datatable">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>NIK</th>
-                                <th>Nama Lengkap</th>
-                                <th>Jns Kelamin</th>
-                                <th>Tmp / Tgl Lair</th>
-                                <th>Alamat</th>
-                                <th>Nomor HP</th>
+                            <tr class="success">
+                                <th class="text-center">#</th>
+                                <th class="text-center">NIK</th>
+                                <th class="text-center">Nama Lengkap</th>
+                                <th class="text-center">Jns Kelamin</th>
+                                <th class="text-center">Tmpt / Tgl Lahir</th>
+                                <th class="text-center">Alamat</th>
+                                <th class="text-center">Nomor HP</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,7 +30,7 @@
                             ?>
 
                                 <tr>
-                                    <td>
+                                    <td class="text-center">
                                         <div class="dropdown">
                                         <button class="btn btn-success btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
                                                 AKSI &nbsp;
@@ -42,12 +42,12 @@
                                             </ul>
                                         </div>
                                     </td>
-                                    <td><?php echo $data["nik"] ?></td>
+                                    <td class="text-center"><?php echo $data["nik"] ?></td>
                                     <td><?php echo $data["nama"] ?></td>
-                                    <td><?php echo $data["jekel"] ?></td>
-                                    <td><?php echo $data["tempat_lahir"]." / ".$data["tgl_lahir"] ?></td>
+                                    <td class="text-center"><?php echo $data["jekel"] ?></td>
+                                    <td><?php echo $data["tempat_lahir"].", ".date('d M Y', strtotime($data["tgl_lahir"])) ?></td>
                                     <td><?php echo $data["alamat"] ?></td>
-                                    <td><?php echo $data["nomor_hp"] ?></td>
+                                    <td class="text-center"><?php echo $data["nomor_hp"] ?></td>
                                 </tr>
 
                             <?php
