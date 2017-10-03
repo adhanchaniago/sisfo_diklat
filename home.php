@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Pendidikan & Pelatihan PT. Pegadaian (Persero)</title>
+    <title>Pendidikan & Pelatihan PT. Pegadaian (Persero) Padang</title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -24,7 +24,7 @@
                 <li>
                     <a href="#intro">Home</a>
                 </li>
-                <li><a href="#about">Tentang</a></li>
+                <li><a href="#about">Visi dan Misi</a></li>
                 <!-- <li><a href="#services">Services</a></li>
                 <li><a href="#works">Works</a></li> -->
                 <li><a href="login.php">Login</a></li>
@@ -53,23 +53,27 @@
           <div class="row">
               <div class="col-md-offset-2 col-md-8">
                 <div class="section-heading">
-                 <h2>Pendidikan & Pelatihan PT. Pegadaian (Persero)</h2>
+                 <h2>Visi dan Misi <br>Pendidikan & Pelatihan <br> PT. Pegadaian (Persero)</h2>
+
                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                     <h3> VISI</h3>
+                     Menjadi garda terdepan dalam transpormasi perusahaan<br>
+                     <br>1. Mempunyai program pembelajaran yang align dengan perusahaan dan kebutuhan bisnis pegadaian. <br>
+                     <br>2. Mampu menyiapkan kapabilitas Human Capital sesuai arah perusahaan sekarang dan masa yang akan datang. 
+                     <br>
+                     <br>3. Mendorong menciptakan budaya pembelajaran.<br>
                  </p>
                  <p>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                 </p>
+                    <h3> MISI </h3>
+                    Menciptakan Human Capital yang mempunyai kompetensi tinggi serta mampu mengerakkan dinamika bisnis organisasi
+                    <br>
+                    <br>1. Menyediakan berbagai jenis pelatihan bagi peningkatan kompetensi dan pengembangan Human Capital Perusahaan.
+                    <br>
+                    2. Mempunyai standar sertifikasi pelatihan didalam setiap job/pekerjaan. <br>
+                    3. Mempunyai standar tinggi dalam proses pembelajaran (silabi, materi, media dan lain-lain).<br>
+                    4. Mempunyai infrastruktur yang lengkap dalam proses delivery pelatihan dan pembelajaran.
+                </p>
+                </div>
              </div>
          </div>
      </div>           
