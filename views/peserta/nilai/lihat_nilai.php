@@ -58,6 +58,7 @@
 	                                $data_nilai_proses = mysqli_query($conn, $data_nilai_sql);
 
 	                                $no = 1;
+	                                $jumlah = 0;
 	                                while ($data_nilai = mysqli_fetch_assoc($data_nilai_proses)) {
 	                                    
 	                            ?>
@@ -66,15 +67,23 @@
 	                                    <td><?php echo $no ?></td>
 	                                    <td><?php echo $data_nilai["nama_pelajaran"] ?></td>
 	                                    <td><?php echo $data_nilai["nama"] ?></td>
-	                                    <td><?php echo $data_nilai["nilai"] ?></td>
+	                                    <td class="text-center"><?php echo $data_nilai["nilai"] ?></td>
 	                                </tr>
 
 	                            <?php
-
-	                                    $no++;
+	                            		$jumlah = $jumlah + $data_nilai["nilai"];
+	                                    $no = $no +1;
 	                                }
 
+	                                $total  = $no-1;
+	                                $rata = $jumlah / $total;
+
 	                            ?>
+
+	                            <tr>
+	                            	<td colspan="3"> <strong>RATA - RATA</strong></td>
+	                            	<td class="text-center"><strong><?php echo number_format($rata, 2) ?></strong></td>
+	                            </tr>
 
 	                        </tbody>
 	                    </table>

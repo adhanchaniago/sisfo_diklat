@@ -36,6 +36,7 @@
                                 <th class="text-center">Cabang Asal</th>
                                 <th class="text-center">Tmpt / Tgl Lahir</th>
                                 <th class="text-center">Nilai</th>
+                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +44,7 @@
                             <?php
 
                                 $data_nilai_sql = "
-                                    SELECT tb_detail_peserta.nik, tb_detail_peserta.nama, tb_nilai.nilai, tb_detail_peserta.tempat_lahir, tb_detail_peserta.tgl_lahir, tb_detail_peserta.cabang_asal
+                                    SELECT tb_detail_peserta.id AS peserta_id, tb_detail_peserta.nik, tb_detail_peserta.nama, tb_nilai.nilai, tb_detail_peserta.tempat_lahir, tb_detail_peserta.tgl_lahir, tb_detail_peserta.cabang_asal
                                     FROM tb_nilai
                                     JOIN tb_angkatan ON tb_nilai.angkatan_id = tb_angkatan.id
                                     JOIN tb_mata_pelajaran ON tb_nilai.mata_pelajaran_id = tb_mata_pelajaran.id
@@ -67,6 +68,11 @@
                                     <td><?php echo $data_nilai["cabang_asal"] ?></td>
                                     <td><?php echo $data_nilai["tempat_lahir"].", ".date('d M Y', strtotime($data_nilai["tgl_lahir"])) ?></td>
                                     <td class="text-center"><?php echo $data_nilai["nilai"] ?></td>
+                                    <td class="text-center">
+                                        <a href="?page=ubah-nilai&akt=<?php echo $angkatan_id ?>&mpl=<?php echo $mata_pelajaran_id ?>&ins=<?php echo $instruktur_id?>&id=<?php echo $data_nilai["peserta_id"] ?>">
+                                            <button type="button" class="btn btn-primary btn-xs">Ubah</button>
+                                        </a>
+                                    </td>
                                 </tr>
 
                             <?php

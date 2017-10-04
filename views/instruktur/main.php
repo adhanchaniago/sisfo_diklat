@@ -103,6 +103,8 @@
                         include "nilai/input-nilai.php";
                     } elseif ($page == 'lihat-nilai') {
                         include "nilai/lihat-nilai.php";
+                    } elseif ($page == 'ubah-nilai') {
+                        include "nilai/ubah-nilai.php";
                     } elseif ($page == 'pilih-angkatan') {
                         include "angkatan_diklat/pilih-angkatan.php";
                     }

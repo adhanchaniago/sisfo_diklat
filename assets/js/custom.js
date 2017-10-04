@@ -7,6 +7,19 @@ $(function(){
         ]
     });
 
+    $(".tb-nilai").dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'print',
+            'excelHtml5',
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'A4'
+            }
+        ]
+    });
+
     $(".datepicker").datepicker();
 
      $(document).on('change', ':file', function() {

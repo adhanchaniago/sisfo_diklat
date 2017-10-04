@@ -20,11 +20,11 @@
                         <h5>Periode : <?php echo date('d M Y', strtotime($angkatan_data["tgl_masuk"])) . " s/d " . date('d M Y', strtotime($angkatan_data["tgl_selesai"])) ?></h5>
                         <hr>
                     </div>
-                    <table class="table table-bordered table-hover my-datatable">
+                    <table class="table table-bordered table-hover tb-nilai display responsive nowrap">
                         <?php 
                             $angkatan_id = $_GET["id"];
                             $data_mapel_sql = "
-                                SELECT tb_mata_pelajaran.id, tb_mata_pelajaran.nama_pelajaran
+                                SELECT DISTINCT tb_mata_pelajaran.id, tb_mata_pelajaran.nama_pelajaran, tb_mata_pelajaran.slug
                                 FROM tb_jadwal_diklat
                                 JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
                                 WHERE tb_jadwal_diklat.angkatan_id = '$angkatan_id'
@@ -39,7 +39,7 @@
                                 <th class="text-center">NAMA</th>
                                 <?php 
                                     while ($data_mapel = mysqli_fetch_assoc($data_mapel_proses)) {
-                                        echo "<th class='text-center'>".$data_mapel["nama_pelajaran"]."</th>";
+                                        echo "<th class='text-center'>".$data_mapel["slug"]."</th>";
                                     }
                                 ?>
                             </tr>
@@ -58,7 +58,7 @@
                                 <?php 
                                     $angkatan_id = $_GET["id"];
                                     $data_mapel_sql2 = "
-                                        SELECT tb_mata_pelajaran.id AS mapel_id, tb_mata_pelajaran.nama_pelajaran
+                                        SELECT DISTINCT tb_mata_pelajaran.id AS mapel_id, tb_mata_pelajaran.nama_pelajaran
                                         FROM tb_jadwal_diklat
                                         JOIN tb_mata_pelajaran ON tb_jadwal_diklat.mata_pelajaran_id = tb_mata_pelajaran.id
                                         WHERE tb_jadwal_diklat.angkatan_id = '$angkatan_id'

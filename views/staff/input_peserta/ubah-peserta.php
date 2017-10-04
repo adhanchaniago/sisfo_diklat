@@ -15,7 +15,7 @@
                                     tb_detail_peserta.nik, tb_detail_peserta.nama, tb_detail_peserta.jekel, tb_detail_peserta.tempat_lahir, 
                                     tb_detail_peserta.tgl_lahir, tb_detail_peserta.cabang_asal, tb_detail_peserta.alamat_kantor,
                                     tb_detail_peserta.tlp_kantor, tb_detail_peserta.nomor_hp, tb_detail_peserta.alamat_rumah, tb_detail_peserta.agama, 
-                                    tb_detail_peserta.foto, tb_kamar.id, tb_kamar.nomor_kamar, tb_kamar.nama_asrama
+                                    tb_detail_peserta.foto, tb_kamar.id AS kamar_id, tb_kamar.nomor_kamar, tb_kamar.nama_asrama
                                     FROM tb_detail_peserta
                                     JOIN tb_angkatan ON tb_detail_peserta.angkatan_id = tb_angkatan.id
                                     JOIN tb_kamar ON tb_detail_peserta.kamar_id = tb_kamar.id
@@ -30,12 +30,27 @@
                                 <input type="text" class="form-control" id="pesertadiklat" placeholder="Peserta Diklat" value="<?php echo $data["nama_diklat"] ?>" readonly>
                             </div><br>
                             <div class="form-grup">
-                                <label for="noabsen">Nomor Absen</label>
-                                <input type="text" class="form-control" id="noabsen" placeholder="No Absen" value="<?php echo $data["nomor_absen"] ?>" readonly>
-                            </div><br>
-                            <div class="form-grup">
                                 <label for="nik">NIK</label>
                                 <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" value="<?php echo $data["nik"] ?>" readonly>
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="noabsen">Nomor Absen</label>
+                                <input type="text" class="form-control" id="noabsen" name="noabsen" placeholder="No Absen" value="<?php echo $data["nomor_absen"] ?>">
+                            </div><br>
+                            <div class="form-grup">
+                                <label for="id_kamar">Kamar</label>
+                                <select name="id_kamar" class="form-control">
+                                    <option value="<?php echo $data["kamar_id"] ?>"><?php echo $data["nama_asrama"] .', Nomor '. $data["nomor_kamar"] ?></option>
+                                    <?php
+                                        $kamar_sql = "SELECT * FROM tb_kamar";
+                                        $kamar_proses = mysqli_query($conn, $kamar_sql);
+                                        while ($kamar_data = mysqli_fetch_assoc($kamar_proses)) {
+                                    ?>
+                                        <option value="<?php echo $kamar_data["id"] ?>"><?php echo $kamar_data["nama_asrama"].', Kamar '.$kamar_data["nomor_kamar"] ?></option>
+                                    <?php
+                                        }
+                                    ?>
+                                </select>
                             </div><br>
                             <div class="form-grup">
                                 <label for="nama">Nama Lengkap</label>
