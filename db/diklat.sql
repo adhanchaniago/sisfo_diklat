@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.5.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2017 at 05:25 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Oct 04, 2017 at 09:52 AM
+-- Server version: 5.7.11
+-- PHP Version: 5.6.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `diklat`
@@ -26,13 +26,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `tb_angkatan`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_angkatan` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_angkatan` (
+  `id` int(10) NOT NULL,
   `nama_diklat` varchar(200) NOT NULL,
   `tgl_masuk` date NOT NULL,
-  `tgl_selesai` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+  `tgl_selesai` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_angkatan`
@@ -49,8 +48,8 @@ INSERT INTO `tb_angkatan` (`id`, `nama_diklat`, `tgl_masuk`, `tgl_selesai`) VALU
 -- Table structure for table `tb_detail_admin`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_detail_admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_detail_admin` (
+  `id` int(11) NOT NULL,
   `user_akun_id` int(11) NOT NULL,
   `nik` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -58,11 +57,8 @@ CREATE TABLE IF NOT EXISTS `tb_detail_admin` (
   `tempat_lahir` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `nomor_hp` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_akun_id` (`user_akun_id`),
-  KEY `user_akun_id_2` (`user_akun_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `nomor_hp` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_detail_admin`
@@ -78,8 +74,8 @@ INSERT INTO `tb_detail_admin` (`id`, `user_akun_id`, `nik`, `nama`, `jekel`, `te
 -- Table structure for table `tb_detail_asmen`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_detail_asmen` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_detail_asmen` (
+  `id` int(11) NOT NULL,
   `user_akun_id` int(11) NOT NULL,
   `nik` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -87,10 +83,8 @@ CREATE TABLE IF NOT EXISTS `tb_detail_asmen` (
   `tempat_lahir` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `nomor_hp` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_akun_id` (`user_akun_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `nomor_hp` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_detail_asmen`
@@ -106,8 +100,8 @@ INSERT INTO `tb_detail_asmen` (`id`, `user_akun_id`, `nik`, `nama`, `jekel`, `te
 -- Table structure for table `tb_detail_instruktur`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_detail_instruktur` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_detail_instruktur` (
+  `id` int(11) NOT NULL,
   `user_akun_id` int(11) NOT NULL,
   `nik` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -115,10 +109,8 @@ CREATE TABLE IF NOT EXISTS `tb_detail_instruktur` (
   `nomor_hp` varchar(12) NOT NULL,
   `tempat_lahir` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
-  `alamat` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_akun_id` (`user_akun_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+  `alamat` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_detail_instruktur`
@@ -151,8 +143,8 @@ INSERT INTO `tb_detail_instruktur` (`id`, `user_akun_id`, `nik`, `nama`, `jekel`
 -- Table structure for table `tb_detail_peserta`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_detail_peserta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_detail_peserta` (
+  `id` int(11) NOT NULL,
   `kamar_id` int(11) NOT NULL,
   `user_akun_id` int(11) NOT NULL,
   `nik` varchar(50) NOT NULL,
@@ -169,20 +161,15 @@ CREATE TABLE IF NOT EXISTS `tb_detail_peserta` (
   `alamat_rumah` varchar(100) DEFAULT NULL,
   `agama` enum('islam','katolik','protestan','hindu','buddha') DEFAULT NULL,
   `foto` varchar(150) DEFAULT NULL,
-  `ktp` varchar(150) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `kamar_id` (`kamar_id`),
-  KEY `angkatan_id` (`angkatan_id`),
-  KEY `kamar_id_2` (`kamar_id`),
-  KEY `user_akun_id` (`user_akun_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
+  `ktp` varchar(150) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_detail_peserta`
 --
 
 INSERT INTO `tb_detail_peserta` (`id`, `kamar_id`, `user_akun_id`, `nik`, `angkatan_id`, `nomor_absen`, `nama`, `jekel`, `tempat_lahir`, `tgl_lahir`, `cabang_asal`, `alamat_kantor`, `tlp_kantor`, `nomor_hp`, `alamat_rumah`, `agama`, `foto`, `ktp`) VALUES
-(60, 4, 118, 'P89148035', 15, 1, 'Nining Purnama Sari', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, 4, 118, 'P89148035', 15, 1, 'Nining Purnama Sari', 'laki-laki', '', '2017-03-01', '', '', '', '', '', 'islam', NULL, NULL),
 (61, 2, 119, 'P921613093', 15, 2, 'T. Aulia Akbar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (62, 2, 120, 'P941613121', 15, 3, 'Chandra Muliawan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (64, 3, 122, 'P851511776', 15, 5, 'Rudi Kencana', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -210,8 +197,8 @@ INSERT INTO `tb_detail_peserta` (`id`, `kamar_id`, `user_akun_id`, `nik`, `angka
 -- Table structure for table `tb_detail_staff`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_detail_staff` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_detail_staff` (
+  `id` int(11) NOT NULL,
   `user_akun_id` int(11) NOT NULL,
   `nik` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -219,11 +206,8 @@ CREATE TABLE IF NOT EXISTS `tb_detail_staff` (
   `tempat_lahir` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `nomor_hp` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_akun_id` (`user_akun_id`),
-  KEY `user_akun_id_2` (`user_akun_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `nomor_hp` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_detail_staff`
@@ -238,20 +222,16 @@ INSERT INTO `tb_detail_staff` (`id`, `user_akun_id`, `nik`, `nama`, `jekel`, `te
 -- Table structure for table `tb_jadwal_diklat`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_jadwal_diklat` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_jadwal_diklat` (
+  `id` int(11) NOT NULL,
   `angkatan_id` int(11) NOT NULL,
   `mata_pelajaran_id` int(11) NOT NULL,
   `detail_instruktur_id` int(11) NOT NULL,
   `hari` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu') NOT NULL,
   `tgl` date NOT NULL,
   `waktu_mulai` varchar(10) NOT NULL,
-  `waktu_selesai` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `angkatan_id` (`angkatan_id`),
-  KEY `mata_pelajaran_id` (`mata_pelajaran_id`),
-  KEY `detail_instruktur_id` (`detail_instruktur_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+  `waktu_selesai` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_jadwal_diklat`
@@ -270,9 +250,9 @@ INSERT INTO `tb_jadwal_diklat` (`id`, `angkatan_id`, `mata_pelajaran_id`, `detai
 (10, 15, 6, 3, 'Sabtu', '2017-03-11', '14.45', '17.45'),
 (11, 15, 21, 20, 'Senin', '2017-03-13', '07.30', '09.00'),
 (12, 15, 3, 2, 'Senin', '2017-03-13', '09.15', '12.15'),
-(13, 15, 2, 3, 'Senin', '2017-03-13', '13.00', '17.45'),
+(13, 15, 6, 3, 'Senin', '2017-03-13', '13.00', '17.45'),
 (14, 15, 3, 2, 'Selasa', '2017-03-14', '07.30', '09.00'),
-(15, 15, 2, 3, 'Selasa', '2017-03-14', '13.00', '17.45'),
+(15, 15, 6, 3, 'Selasa', '2017-03-14', '13.00', '17.45'),
 (16, 15, 3, 2, 'Rabu', '2017-03-15', '07.30', '12.15'),
 (17, 15, 6, 3, 'Rabu', '2017-03-15', '13.00', '17.45'),
 (18, 15, 10, 7, 'Kamis', '2017-03-16', '07.30', '12.15'),
@@ -294,12 +274,11 @@ INSERT INTO `tb_jadwal_diklat` (`id`, `angkatan_id`, `mata_pelajaran_id`, `detai
 -- Table structure for table `tb_kamar`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_kamar` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_kamar` (
+  `id` int(11) NOT NULL,
   `nama_asrama` varchar(50) NOT NULL,
-  `nomor_kamar` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+  `nomor_kamar` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_kamar`
@@ -343,49 +322,48 @@ INSERT INTO `tb_kamar` (`id`, `nama_asrama`, `nomor_kamar`) VALUES
 -- Table structure for table `tb_mata_pelajaran`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_mata_pelajaran` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_mata_pelajaran` (
+  `id` int(11) NOT NULL,
   `nama_pelajaran` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+  `slug` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_mata_pelajaran`
 --
 
-INSERT INTO `tb_mata_pelajaran` (`id`, `nama_pelajaran`) VALUES
-(1, 'Hukum Jaminan Fidusia (HJF)'),
-(2, 'Metode Teknik Menaksir Barang Gudang (MTBG)'),
-(3, 'Metode Teknik Menaksir Logam Perhiasan (MTLP)'),
-(4, 'Dasar-dasar Pembiayaan dan Perkreditan (DPP)'),
-(5, 'Metode dan Teknik Menaksir Permata Intan (MTPI)'),
-(6, 'Metode dan Teknik Menaksir Barang Gudang (MTBG)'),
-(7, 'Pedoman Operasional Bisnis Fidusia (POBF)'),
-(8, 'Proses Kerja Penaksir (PKP)'),
-(9, 'Pegadaian Sistem Informasi Online (PAS)'),
-(10, 'Akuntansi dan Keuangan (AK)'),
-(11, 'Budaya Perusahaan (BP)'),
-(12, 'Standar Pelayanan Pegadaian (SPP)'),
-(13, 'Personality Development (PD)'),
-(14, 'Pemasaran Market Inteligen & Sales (PMIS)'),
-(15, 'Ceramah Direksi (CD)'),
-(16, 'Ceramah Literasi Kebijakan Perusahaan (CLKP)'),
-(17, 'Ceramah Kebijakan SHC (CKSHC)'),
-(18, 'Ceramah Produk Emas (CPE)'),
-(19, 'Ceramah Identifikasi Keaslian Kendaraan Bermotor '),
-(20, 'Ceramah Tindak Pidana Korupsi (CTPK)'),
-(21, 'UJIAN Proses Kerja Penaksir'),
-(22, 'UJIAN Metode Teknik Menaksir Logam Perhiasan'),
-(23, 'UJIAN Metode Teknik Menaksir Barang Gudang'),
-(24, 'UJIAN  Metode Teknik Menaksir Permata Intan'),
-(25, 'UJIAN Dasar-dasar Pembiayaan dan Perkreditan'),
-(26, 'UJIAN Pedoman Operasional BIsnis Fidusia'),
-(27, 'UJIAN Akuntansi dan Keuangan'),
-(28, 'UJIAN Budaya Perusahaan'),
-(29, 'UJIAN Pegadaian Sistem Informasi Online'),
-(30, 'UJIAN Standar Pelayanan Pegadaian'),
-(31, 'UJIAN Hukum Jaminan Fidusia'),
-(32, 'UJIAN Pemasaran Market Inteligen & Sales');
+INSERT INTO `tb_mata_pelajaran` (`id`, `nama_pelajaran`, `slug`) VALUES
+(1, 'Hukum Jaminan Fidusia ', 'HJF'),
+(3, 'Metode Teknik Menaksir Logam Perhiasan ', 'MTLP'),
+(4, 'Dasar-dasar Pembiayaan dan Perkreditan ', 'DPP'),
+(5, 'Metode dan Teknik Menaksir Permata Intan ', 'MTPI'),
+(6, 'Metode dan Teknik Menaksir Barang Gudang ', 'MTBG'),
+(7, 'Pedoman Operasional Bisnis Fidusia ', 'POBF'),
+(8, 'Proses Kerja Penaksir ', 'PKP'),
+(9, 'Pegadaian Sistem Informasi Online ', 'PAS'),
+(10, 'Akuntansi dan Keuangan ', 'AK'),
+(11, 'Budaya Perusahaan ', 'BP'),
+(12, 'Standar Pelayanan Pegadaian ', 'SPP'),
+(13, 'Personality Development ', 'PD'),
+(14, 'Pemasaran Market Inteligen & Sales ', 'PMIS'),
+(15, 'Ceramah Direksi ', 'CD'),
+(16, 'Ceramah Literasi Kebijakan Perusahaan ', 'CLKP'),
+(17, 'Ceramah Kebijakan SHC ', 'CKSHC'),
+(18, 'Ceramah Produk Emas ', 'CPE'),
+(19, 'Ceramah Identifikasi Keaslian Kendaraan Bermotor ', 'CIKKB'),
+(20, 'Ceramah Tindak Pidana Korupsi ', 'CTPK'),
+(21, 'UJIAN Proses Kerja Penaksir', 'UJIAN PKP'),
+(22, 'UJIAN Metode Teknik  Logam Perhiasan', 'UJIAN MTLP'),
+(23, 'UJIAN Metode Teknik  Barang Gudang', 'UJIAN MTLP'),
+(24, 'UJIAN  Metode Teknik  Permata Intan', 'UJIAN MTPI'),
+(25, 'UJIAN Dasar-dasar Pembiayaan dan Perkreditan', 'UJIAN DPP'),
+(26, 'UJIAN Pedoman Operasional BIsnis Fidusia', 'UJIAN POBF'),
+(27, 'UJIAN Akuntansi dan Keuangan', 'UJIAN AK'),
+(28, 'UJIAN Budaya Perusahaan', 'UJIAN BP'),
+(29, 'UJIAN Pegadaian Sistem Informasi Online', 'UJIAN PAS'),
+(30, 'UJIAN Standar Pelayanan Pegadaian', 'UJIAN SPP'),
+(31, 'UJIAN Hukum Jaminan Fidusia', 'UJIAN HJF'),
+(32, 'UJIAN Pemasaran Market Inteligen & Sales', 'UJIAN PMIS');
 
 -- --------------------------------------------------------
 
@@ -393,14 +371,12 @@ INSERT INTO `tb_mata_pelajaran` (`id`, `nama_pelajaran`) VALUES
 -- Table structure for table `tb_materi`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_materi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_materi` (
+  `id` int(11) NOT NULL,
   `detail_instruktur_id` int(11) NOT NULL,
   `judul_materi` varchar(100) NOT NULL,
-  `lokasi` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `detail_instruktur_id` (`detail_instruktur_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `lokasi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_materi`
@@ -415,30 +391,14 @@ INSERT INTO `tb_materi` (`id`, `detail_instruktur_id`, `judul_materi`, `lokasi`)
 -- Table structure for table `tb_nilai`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_nilai` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_nilai` (
+  `id` int(11) NOT NULL,
   `angkatan_id` int(11) NOT NULL,
   `mata_pelajaran_id` int(11) NOT NULL,
   `detail_peserta_id` int(11) NOT NULL,
   `detail_instruktur_id` int(11) NOT NULL,
-  `nilai` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id` (`id`),
-  KEY `mata_pelajaran_id` (`mata_pelajaran_id`),
-  KEY `detail_peserta_id` (`detail_peserta_id`),
-  KEY `nilai` (`nilai`),
-  KEY `detail_peserta_id_2` (`detail_peserta_id`),
-  KEY `mata_pelajaran_id_2` (`mata_pelajaran_id`),
-  KEY `angkatan_id` (`angkatan_id`),
-  KEY `mata_pelajaran_id_3` (`mata_pelajaran_id`),
-  KEY `detail_peserta_id_3` (`detail_peserta_id`),
-  KEY `nilai_2` (`nilai`),
-  KEY `detail_instruktur_id` (`detail_instruktur_id`),
-  KEY `angkatan_id_2` (`angkatan_id`),
-  KEY `mata_pelajaran_id_4` (`mata_pelajaran_id`),
-  KEY `detail_peserta_id_4` (`detail_peserta_id`),
-  KEY `detail_instruktur_id_2` (`detail_instruktur_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64 ;
+  `nilai` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_nilai`
@@ -448,7 +408,7 @@ INSERT INTO `tb_nilai` (`id`, `angkatan_id`, `mata_pelajaran_id`, `detail_pesert
 (1, 15, 6, 60, 3, '70'),
 (2, 15, 6, 61, 3, '85'),
 (3, 15, 6, 62, 3, '77'),
-(4, 15, 6, 64, 3, '81'),
+(4, 15, 6, 64, 3, '85'),
 (5, 15, 6, 65, 3, '90'),
 (6, 15, 6, 70, 3, '75'),
 (7, 15, 6, 71, 3, '70'),
@@ -515,15 +475,13 @@ INSERT INTO `tb_nilai` (`id`, `angkatan_id`, `mata_pelajaran_id`, `detail_pesert
 -- Table structure for table `tb_user_akun`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_user_akun` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tb_user_akun` (
+  `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `hak_akses` enum('staff','asmen','instruktur','peserta','admin') NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=148 ;
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tb_user_akun`
@@ -577,6 +535,176 @@ INSERT INTO `tb_user_akun` (`id`, `username`, `password`, `hak_akses`, `status`)
 (146, 'P9345', 'f423b1bead6d6cd778d56202ab4e203e', 'instruktur', 1),
 (147, 'P84778', '1b3d18a3c49c198ddbb69f0b2e0c0a31', 'asmen', 1);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tb_angkatan`
+--
+ALTER TABLE `tb_angkatan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_detail_admin`
+--
+ALTER TABLE `tb_detail_admin`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_akun_id` (`user_akun_id`),
+  ADD KEY `user_akun_id_2` (`user_akun_id`);
+
+--
+-- Indexes for table `tb_detail_asmen`
+--
+ALTER TABLE `tb_detail_asmen`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_akun_id` (`user_akun_id`);
+
+--
+-- Indexes for table `tb_detail_instruktur`
+--
+ALTER TABLE `tb_detail_instruktur`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_akun_id` (`user_akun_id`);
+
+--
+-- Indexes for table `tb_detail_peserta`
+--
+ALTER TABLE `tb_detail_peserta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `kamar_id` (`kamar_id`),
+  ADD KEY `angkatan_id` (`angkatan_id`),
+  ADD KEY `kamar_id_2` (`kamar_id`),
+  ADD KEY `user_akun_id` (`user_akun_id`);
+
+--
+-- Indexes for table `tb_detail_staff`
+--
+ALTER TABLE `tb_detail_staff`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_akun_id` (`user_akun_id`),
+  ADD KEY `user_akun_id_2` (`user_akun_id`);
+
+--
+-- Indexes for table `tb_jadwal_diklat`
+--
+ALTER TABLE `tb_jadwal_diklat`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `angkatan_id` (`angkatan_id`),
+  ADD KEY `mata_pelajaran_id` (`mata_pelajaran_id`),
+  ADD KEY `detail_instruktur_id` (`detail_instruktur_id`);
+
+--
+-- Indexes for table `tb_kamar`
+--
+ALTER TABLE `tb_kamar`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_mata_pelajaran`
+--
+ALTER TABLE `tb_mata_pelajaran`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_materi`
+--
+ALTER TABLE `tb_materi`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `detail_instruktur_id` (`detail_instruktur_id`);
+
+--
+-- Indexes for table `tb_nilai`
+--
+ALTER TABLE `tb_nilai`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`),
+  ADD KEY `mata_pelajaran_id` (`mata_pelajaran_id`),
+  ADD KEY `detail_peserta_id` (`detail_peserta_id`),
+  ADD KEY `nilai` (`nilai`),
+  ADD KEY `detail_peserta_id_2` (`detail_peserta_id`),
+  ADD KEY `mata_pelajaran_id_2` (`mata_pelajaran_id`),
+  ADD KEY `angkatan_id` (`angkatan_id`),
+  ADD KEY `mata_pelajaran_id_3` (`mata_pelajaran_id`),
+  ADD KEY `detail_peserta_id_3` (`detail_peserta_id`),
+  ADD KEY `nilai_2` (`nilai`),
+  ADD KEY `detail_instruktur_id` (`detail_instruktur_id`),
+  ADD KEY `angkatan_id_2` (`angkatan_id`),
+  ADD KEY `mata_pelajaran_id_4` (`mata_pelajaran_id`),
+  ADD KEY `detail_peserta_id_4` (`detail_peserta_id`),
+  ADD KEY `detail_instruktur_id_2` (`detail_instruktur_id`);
+
+--
+-- Indexes for table `tb_user_akun`
+--
+ALTER TABLE `tb_user_akun`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tb_angkatan`
+--
+ALTER TABLE `tb_angkatan`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `tb_detail_admin`
+--
+ALTER TABLE `tb_detail_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tb_detail_asmen`
+--
+ALTER TABLE `tb_detail_asmen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `tb_detail_instruktur`
+--
+ALTER TABLE `tb_detail_instruktur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT for table `tb_detail_peserta`
+--
+ALTER TABLE `tb_detail_peserta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+--
+-- AUTO_INCREMENT for table `tb_detail_staff`
+--
+ALTER TABLE `tb_detail_staff`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_jadwal_diklat`
+--
+ALTER TABLE `tb_jadwal_diklat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT for table `tb_kamar`
+--
+ALTER TABLE `tb_kamar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+--
+-- AUTO_INCREMENT for table `tb_mata_pelajaran`
+--
+ALTER TABLE `tb_mata_pelajaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT for table `tb_materi`
+--
+ALTER TABLE `tb_materi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tb_nilai`
+--
+ALTER TABLE `tb_nilai`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+--
+-- AUTO_INCREMENT for table `tb_user_akun`
+--
+ALTER TABLE `tb_user_akun`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 --
 -- Constraints for dumped tables
 --
