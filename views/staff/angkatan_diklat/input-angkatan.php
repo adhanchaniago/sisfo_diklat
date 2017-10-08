@@ -14,11 +14,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="tgl_masuk">Tanggal Masuk :</label>
-                                <input type="text" class="form-control datepicker" name="tgl_masuk" placeholder="Tanggal Masuk" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control awaldiklat" name="tgl_masuk" placeholder="Tanggal Masuk" data-date-format="yyyy-mm-dd">
                             </div>
                             <div class="form-group">
                                 <label for="tgl_selesai">Tanggal Keluar :</label>
-                                <input type="text" class="form-control datepicker" name="tgl_selesai" placeholder="Tanggal Keluar" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control akhirdiklat" name="tgl_selesai" placeholder="Tanggal Keluar" data-date-format="yyyy-mm-dd">
                             </div><hr>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">Simpan</button>&nbsp;

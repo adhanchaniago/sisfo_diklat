@@ -68,7 +68,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="tgl">Tanggal :</label>
-                                <input type="text" class="form-control datepicker" name="tgl" placeholder="Tanggal" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control jadwal" name="tgl" placeholder="Tanggal" data-date-format="yyyy-mm-dd">
                             </div>
                             <div class="form-group">
                                 <label for="waktu_selesai">Waktu Mulai :</label>

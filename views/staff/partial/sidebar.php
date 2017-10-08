@@ -40,7 +40,7 @@
                 <a href="#"><i class="fa fa-id-badge fa-fw"></i>&nbsp;Peserta<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="?page=input-peserta"><i class="fa fa-angle-right"></i> Input Peserta </a>
+                        <a href="?page=pilih-angkatan&show=input-peserta"><i class="fa fa-angle-right"></i> Input Peserta </a>
                     </li>
                     <li>
                         <a href="?page=pilih-angkatan&show=peserta"><i class="fa fa-angle-right"></i> Data Peserta</a>

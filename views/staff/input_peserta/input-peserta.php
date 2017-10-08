@@ -7,25 +7,28 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-12">
+                        <?php 
+                            $angkatan_id = $_GET["id"];
+                        ?>
                         <form method="POST" action="proses_input/proses_input_peserta.php">
+                            <input type="hidden" name="angkatan_id" value="<?php echo $angkatan_id ?>">
                             <div class="form-group">
                                 <label for="angkatan_id">Angkatan Diklat :</label>
-                                <select name="angkatan_id" id="angkatan_id" class="form-control">
-                                    <option value="">Pilih Angkatan Diklat</option>
-                                    <?php
-                                        $angkatan_sql = "SELECT * FROM tb_angkatan";
-                                        $angkatan_proses = mysqli_query($conn, $angkatan_sql);
-                                        while ($angkatan_data = mysqli_fetch_assoc($angkatan_proses)) {
-                                    ?>
-                                        <option value="<?php echo $angkatan_data["id"] ?>"><?php echo $angkatan_data["nama_diklat"] ?></option>
-                                    <?php
-                                        }
-                                    ?>
-                                </select>
+                                <?php 
+                                    $angkatan_sql = "SELECT * FROM tb_angkatan WHERE id = '$angkatan_id'";
+                                    $angkatan_proses = mysqli_query($conn, $angkatan_sql);
+                                    $angkatan_data = mysqli_fetch_assoc($angkatan_proses);
+                                ?>
+                                <input type="text" name="" value="<?php echo $angkatan_data["nama_diklat"] ?>" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="nomor_absen">Nomor Absen :</label>
-                                <input type="text" name="nomor_absen" class="form-control" placeholder="Nomor Absen">
+                                <?php 
+                                    $absen_sql = "SELECT MAX(nomor_absen) AS noabsen FROM tb_detail_peserta WHERE angkatan_id = '$angkatan_id'";
+                                    $absen_proses = mysqli_query($conn, $absen_sql);
+                                    $absen_data = mysqli_fetch_assoc($absen_proses);
+                                ?>
+                                <input type="text" name="nomor_absen" class="form-control" placeholder="Nomor Absen" value="<?php echo $absen_data["noabsen"] + 1 ?>" readonly>
                             </div>
                             <div class="form-grup">
                                 <label for="nik">NIK :</label>

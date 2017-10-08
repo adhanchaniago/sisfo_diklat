@@ -20,7 +20,44 @@ $(function(){
         ]
     });
 
-    $(".datepicker").datepicker();
+    $(".datepicker").datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: 2,
+        autoclose: 1,
+    });
+
+    $(".jadwal").datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: 2,
+        autoclose: 1,
+        // startDate : new Date(),
+    });
+
+    $(".tgllahir").datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: 2,
+        autoclose: 1,
+        startDate : new Date('1965-01-01'),
+        endDate : new Date('1996-12-31'),
+    });
+
+    var awaldiklat = "";
+
+    $(".awaldiklat").datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: 2,
+        autoclose: 1,
+    }).on('changeDate', function(ev){
+        awaldiklat = $('.awaldiklat').val();
+        console.log(awaldiklat);
+        $('.akhirdiklat').datetimepicker('setStartDate', awaldiklat);
+    });
+
+    $(".akhirdiklat").datetimepicker({
+        format: 'yyyy-mm-dd',
+        minView: 2,
+        autoclose: 1,
+    });
 
      $(document).on('change', ':file', function() {
         var input = $(this),

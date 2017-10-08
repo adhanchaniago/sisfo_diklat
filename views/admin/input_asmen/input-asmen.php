@@ -30,7 +30,7 @@
                             </div><br>
                             <div class="form-grup">
                                 <label for="tanggallahir">Tanggal Lahir :</label>
-                                <input type="text" class="form-control datepicker" id="tanggallahir" name="tanggallahir" placeholder="Tanggal Lahir" data-date-format="yyyy-mm-dd">
+                                <input type="text" class="form-control tgllahir" id="tanggallahir" name="tanggallahir" placeholder="Tanggal Lahir" data-date-format="yyyy-mm-dd">
                             </div><br>
                             <div class="form-grup">
                                 <label for="alamat">Alamat :</label>

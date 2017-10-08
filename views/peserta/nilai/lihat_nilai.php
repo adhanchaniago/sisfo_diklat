@@ -80,16 +80,21 @@
 
 	                            ?>
 
-	                            <tr>
-	                            	<td colspan="3"> <strong>RATA - RATA</strong></td>
-	                            	<td class="text-center"><strong><?php echo number_format($rata, 2) ?></strong></td>
-	                            </tr>
+	                            
 
 	                        </tbody>
 	                    </table>
-	                    <p>
-	                        Nilai Patokan = 70
-	                    </p>
+						<br>
+	                    <table class="table table-bordered">
+	                    	<tr>
+	                    		<td> <strong>RATA - RATA</strong></td>
+	                    		<td class="text-center"><strong><?php echo number_format($rata, 2) ?></strong></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td> Nilai Patokan</td>
+	                    		<td class="text-center"> 70 </td>
+	                    	</tr>
+	                    </table>
                     </div>
                 </div>
             </div>

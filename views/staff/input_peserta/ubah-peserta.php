@@ -70,7 +70,7 @@
                             </div><br>
                             <div class="form-grup">
                                 <label for="tgllahir">Tanggal Lahir</label>
-                                <input type="text" class="form-control datepicker" id="tgllahir" name="tgllahir" placeholder="Tanggal Lahir" data-date-format="yyyy-mm-dd" value="<?php echo $data["tgl_lahir"] ?>">
+                                <input type="text" class="form-control tgllahir" id="tgllahir" name="tgllahir" placeholder="Tanggal Lahir" data-date-format="yyyy-mm-dd" value="<?php echo $data["tgl_lahir"] ?>">
                             </div><br>
                             <div class="form-grup">
                                 <label for="agama">Agama</label>

@@ -18,6 +18,8 @@
                                 $target = 'lihat-jadwal';
                             } elseif ($show == 'nilai') {
                                 $target = 'lihat-nilai';
+                            } elseif ($show == 'input-peserta') {
+                                $target = 'input-peserta';
                             }
 
                         ?>
